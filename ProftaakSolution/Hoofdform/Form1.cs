@@ -32,5 +32,15 @@ namespace Hoofdform
             );
 
         }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialTabSelector1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
