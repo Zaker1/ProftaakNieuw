@@ -216,7 +216,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 88);
             this.button1.TabIndex = 26;
-            this.button1.Text = "OL";
+            this.button1.Text = "Remco en max is life";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // Form1
