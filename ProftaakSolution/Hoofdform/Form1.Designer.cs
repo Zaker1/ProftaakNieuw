@@ -212,11 +212,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(497, 233);
+            this.button1.Location = new System.Drawing.Point(494, 246);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 88);
             this.button1.TabIndex = 26;
-            this.button1.Text = "KutKop";
+            this.button1.Text = "OL";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // Form1
