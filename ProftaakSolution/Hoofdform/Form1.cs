@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using MaterialSkin.Animations;
+using System.Data.SqlClient;
 
 namespace Hoofdform
 {
@@ -17,7 +18,9 @@ namespace Hoofdform
     {
         public Form1()
         {
-            InitializeComponent();
+           InitializeComponent();
+            this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            
 
             // Create a material theme manager and add the form to manage (this)
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
@@ -26,9 +29,9 @@ namespace Hoofdform
 
             // Configure color schema
             materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.Teal600, Primary.Teal800,
-                Primary.Teal600, Accent.Teal700,
-                TextShade.WHITE
+                Primary.Yellow700, Primary.Blue800,
+                Primary.Yellow600, Accent.Blue400,
+                TextShade.BLACK
             );
 
         }
@@ -41,6 +44,57 @@ namespace Hoofdform
         private void materialTabSelector1_Click(object sender, EventArgs e)
         {
 
+        }
+        
+
+        private void materialRaisedButton1_Click(object sender, EventArgs e)
+        {
+            
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = Properties.Settings.Default.DatabaseUSFConnectionString;
+            connection.Open();
+            /*
+                DatabaseCon.CONN.Open();
+                cmd = DatabaseCon.CONN.CreateCommand();
+                cmd.CommandText = "SELECT * FROM dbo.Boek WHERE isbn_nummer ='" + data.isbn_nummer + "'";
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    data.titel = (dr["titel"].ToString());
+                    data.auteur = (dr["auteur"].ToString());
+                    data.beschrijving = (dr["beschrijving"].ToString());
+                    data.genre = (dr["genre"].ToString());
+                    data.prijs = (Convert.ToDecimal(dr["prijs"].ToString()));
+                    data.uitgeversector_naam = (dr["uitgeversector_naam"].ToString());
+                }
+                cmd.ExecuteNonQuery();
+                DatabaseCon.CONN.Close();
+            */
+
+            
+
+            SqlCommand command = new SqlCommand();
+            command = connection.CreateCommand();
+            command.CommandText = "Select * from Perron";
+            SqlDataAdapter da = new SqlDataAdapter(command);
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            command.ExecuteNonQuery();
+            connection.Close();
+
+            cmbCoupe.DataSource = dt;
+            cmbCoupe.DisplayMember = "naam";
+            cmbCoupe.ValueMember = "id";
+
+            // DataSet ds = new DataSet();
+            // da.Fill(ds);
+            // dataGridView1.AutoGenerateColumns = true;
+            // dataGridView1.DataSource = ds.Tables;
         }
     }
 }
