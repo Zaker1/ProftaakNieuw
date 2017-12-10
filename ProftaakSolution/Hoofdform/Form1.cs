@@ -96,5 +96,10 @@ namespace Hoofdform
             // dataGridView1.AutoGenerateColumns = true;
             // dataGridView1.DataSource = ds.Tables;
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
