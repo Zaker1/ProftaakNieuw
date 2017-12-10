@@ -70,17 +70,25 @@
             this.materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
             this.materialSingleLineTextField3 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialSingleLineTextField4 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialSingleLineTextField5 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialTabControl1.SuspendLayout();
             this.treinSamenstel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.coupeToevoeg.SuspendLayout();
+            this.cabineToevoeg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -198,9 +206,9 @@
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(100, 36);
+            this.materialRaisedButton1.Size = new System.Drawing.Size(103, 36);
             this.materialRaisedButton1.TabIndex = 46;
-            this.materialRaisedButton1.Text = "Toevoegen";
+            this.materialRaisedButton1.Text = "Stel samen";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
             this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
@@ -292,7 +300,7 @@
             // 
             // coupeToevoeg
             // 
-            this.coupeToevoeg.Controls.Add(this.materialFlatButton1);
+            this.coupeToevoeg.Controls.Add(this.materialRaisedButton2);
             this.coupeToevoeg.Controls.Add(this.groupBox2);
             this.coupeToevoeg.Controls.Add(this.groupBox1);
             this.coupeToevoeg.Controls.Add(this.panel1);
@@ -308,6 +316,12 @@
             // 
             // cabineToevoeg
             // 
+            this.cabineToevoeg.Controls.Add(this.materialSingleLineTextField5);
+            this.cabineToevoeg.Controls.Add(this.materialLabel17);
+            this.cabineToevoeg.Controls.Add(this.materialRaisedButton3);
+            this.cabineToevoeg.Controls.Add(this.materialSingleLineTextField4);
+            this.cabineToevoeg.Controls.Add(this.materialLabel16);
+            this.cabineToevoeg.Controls.Add(this.pictureBox3);
             this.cabineToevoeg.Location = new System.Drawing.Point(4, 22);
             this.cabineToevoeg.Name = "cabineToevoeg";
             this.cabineToevoeg.Padding = new System.Windows.Forms.Padding(3);
@@ -618,22 +632,105 @@
             this.materialSingleLineTextField3.TabStop = false;
             this.materialSingleLineTextField3.UseSystemPasswordChar = false;
             // 
-            // materialFlatButton1
+            // materialRaisedButton2
             // 
-            this.materialFlatButton1.AutoSize = true;
-            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton1.BackColor = System.Drawing.Color.White;
-            this.materialFlatButton1.Depth = 0;
-            this.materialFlatButton1.Icon = null;
-            this.materialFlatButton1.Location = new System.Drawing.Point(538, 304);
-            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton1.Name = "materialFlatButton1";
-            this.materialFlatButton1.Primary = false;
-            this.materialFlatButton1.Size = new System.Drawing.Size(100, 36);
-            this.materialFlatButton1.TabIndex = 7;
-            this.materialFlatButton1.Text = "Toevoegen";
-            this.materialFlatButton1.UseVisualStyleBackColor = false;
+            this.materialRaisedButton2.AutoSize = true;
+            this.materialRaisedButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton2.Depth = 0;
+            this.materialRaisedButton2.Icon = null;
+            this.materialRaisedButton2.Location = new System.Drawing.Point(546, 291);
+            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton2.Name = "materialRaisedButton2";
+            this.materialRaisedButton2.Primary = true;
+            this.materialRaisedButton2.Size = new System.Drawing.Size(100, 36);
+            this.materialRaisedButton2.TabIndex = 7;
+            this.materialRaisedButton2.Text = "Toevoegen";
+            this.materialRaisedButton2.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(7, 7);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(651, 173);
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            // 
+            // materialLabel16
+            // 
+            this.materialLabel16.AutoSize = true;
+            this.materialLabel16.Depth = 0;
+            this.materialLabel16.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel16.Location = new System.Drawing.Point(11, 216);
+            this.materialLabel16.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel16.Name = "materialLabel16";
+            this.materialLabel16.Size = new System.Drawing.Size(53, 19);
+            this.materialLabel16.TabIndex = 1;
+            this.materialLabel16.Text = "Naam:";
+            // 
+            // materialSingleLineTextField4
+            // 
+            this.materialSingleLineTextField4.BackColor = System.Drawing.Color.White;
+            this.materialSingleLineTextField4.Depth = 0;
+            this.materialSingleLineTextField4.Hint = "";
+            this.materialSingleLineTextField4.Location = new System.Drawing.Point(212, 216);
+            this.materialSingleLineTextField4.MaxLength = 32767;
+            this.materialSingleLineTextField4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialSingleLineTextField4.Name = "materialSingleLineTextField4";
+            this.materialSingleLineTextField4.PasswordChar = '\0';
+            this.materialSingleLineTextField4.SelectedText = "";
+            this.materialSingleLineTextField4.SelectionLength = 0;
+            this.materialSingleLineTextField4.SelectionStart = 0;
+            this.materialSingleLineTextField4.Size = new System.Drawing.Size(143, 23);
+            this.materialSingleLineTextField4.TabIndex = 2;
+            this.materialSingleLineTextField4.TabStop = false;
+            this.materialSingleLineTextField4.UseSystemPasswordChar = false;
+            // 
+            // materialRaisedButton3
+            // 
+            this.materialRaisedButton3.AutoSize = true;
+            this.materialRaisedButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton3.Depth = 0;
+            this.materialRaisedButton3.Icon = null;
+            this.materialRaisedButton3.Location = new System.Drawing.Point(15, 298);
+            this.materialRaisedButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton3.Name = "materialRaisedButton3";
+            this.materialRaisedButton3.Primary = true;
+            this.materialRaisedButton3.Size = new System.Drawing.Size(116, 36);
+            this.materialRaisedButton3.TabIndex = 3;
+            this.materialRaisedButton3.Text = "Kies een foto";
+            this.materialRaisedButton3.UseVisualStyleBackColor = true;
+            // 
+            // materialLabel17
+            // 
+            this.materialLabel17.AutoSize = true;
+            this.materialLabel17.Depth = 0;
+            this.materialLabel17.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel17.Location = new System.Drawing.Point(11, 255);
+            this.materialLabel17.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel17.Name = "materialLabel17";
+            this.materialLabel17.Size = new System.Drawing.Size(185, 19);
+            this.materialLabel17.TabIndex = 4;
+            this.materialLabel17.Text = "Aantal passagiersplekken:";
+            // 
+            // materialSingleLineTextField5
+            // 
+            this.materialSingleLineTextField5.BackColor = System.Drawing.Color.White;
+            this.materialSingleLineTextField5.Depth = 0;
+            this.materialSingleLineTextField5.Hint = "";
+            this.materialSingleLineTextField5.Location = new System.Drawing.Point(212, 253);
+            this.materialSingleLineTextField5.MaxLength = 32767;
+            this.materialSingleLineTextField5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialSingleLineTextField5.Name = "materialSingleLineTextField5";
+            this.materialSingleLineTextField5.PasswordChar = '\0';
+            this.materialSingleLineTextField5.SelectedText = "";
+            this.materialSingleLineTextField5.SelectionLength = 0;
+            this.materialSingleLineTextField5.SelectionStart = 0;
+            this.materialSingleLineTextField5.Size = new System.Drawing.Size(143, 23);
+            this.materialSingleLineTextField5.TabIndex = 2;
+            this.materialSingleLineTextField5.TabStop = false;
+            this.materialSingleLineTextField5.UseSystemPasswordChar = false;
             // 
             // Form1
             // 
@@ -650,6 +747,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.coupeToevoeg.ResumeLayout(false);
             this.coupeToevoeg.PerformLayout();
+            this.cabineToevoeg.ResumeLayout(false);
+            this.cabineToevoeg.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -661,6 +760,7 @@
             this.groupBox2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -693,7 +793,6 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField2;
         private MaterialSkin.Controls.MaterialLabel materialLabel9;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private MaterialSkin.Controls.MaterialLabel materialLabel13;
@@ -709,6 +808,13 @@
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
         private MaterialSkin.Controls.MaterialLabel materialLabel11;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
+        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField5;
+        private MaterialSkin.Controls.MaterialLabel materialLabel17;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton3;
+        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField4;
+        private MaterialSkin.Controls.MaterialLabel materialLabel16;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
 
