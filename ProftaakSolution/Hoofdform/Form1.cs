@@ -99,5 +99,11 @@ namespace Hoofdform
         {
                                                                         
         }
+
+        private void btnCoupeToevoegen_Click(object sender, EventArgs e)
+        {
+            Coupe coupe = new Coupe();
+            coupe.Toevoegen();
+        }
     }
 }
