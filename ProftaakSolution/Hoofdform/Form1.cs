@@ -49,10 +49,6 @@ namespace Hoofdform
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = Properties.Settings.Default.DatabaseUSFConnectionString;
-            connection.Open();
             /*
                 DatabaseCon.CONN.Open();
                 cmd = DatabaseCon.CONN.CreateCommand();
@@ -74,7 +70,9 @@ namespace Hoofdform
                 DatabaseCon.CONN.Close();
             */
 
-            
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = Properties.Settings.Default.DatabaseUSFConnectionString;
+            connection.Open();
 
             SqlCommand command = new SqlCommand();
             command = connection.CreateCommand();
