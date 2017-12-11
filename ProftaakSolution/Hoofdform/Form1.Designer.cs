@@ -69,16 +69,16 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialSingleLineTextField4 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl1.SuspendLayout();
             this.treinSamenstel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -90,8 +90,8 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -135,12 +135,12 @@
             this.materialLabel8.AutoSize = true;
             this.materialLabel8.BackColor = System.Drawing.Color.White;
             this.materialLabel8.Depth = 0;
-            this.materialLabel8.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel8.Font = new System.Drawing.Font("Frutiger Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel8.Location = new System.Drawing.Point(347, 327);
             this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel8.Name = "materialLabel8";
-            this.materialLabel8.Size = new System.Drawing.Size(157, 19);
+            this.materialLabel8.Size = new System.Drawing.Size(159, 18);
             this.materialLabel8.TabIndex = 51;
             this.materialLabel8.Text = "Totaal aantal coupe\'s:";
             // 
@@ -158,12 +158,12 @@
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.BackColor = System.Drawing.Color.White;
             this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.Font = new System.Drawing.Font("Frutiger Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel3.Location = new System.Drawing.Point(45, 272);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(56, 19);
+            this.materialLabel3.Size = new System.Drawing.Size(58, 18);
             this.materialLabel3.TabIndex = 45;
             this.materialLabel3.Text = "Aantal:";
             // 
@@ -172,12 +172,12 @@
             this.materialLabel7.AutoSize = true;
             this.materialLabel7.BackColor = System.Drawing.Color.White;
             this.materialLabel7.Depth = 0;
-            this.materialLabel7.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel7.Font = new System.Drawing.Font("Frutiger Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel7.Location = new System.Drawing.Point(347, 288);
             this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel7.Name = "materialLabel7";
-            this.materialLabel7.Size = new System.Drawing.Size(205, 19);
+            this.materialLabel7.Size = new System.Drawing.Size(213, 18);
             this.materialLabel7.TabIndex = 50;
             this.materialLabel7.Text = "Aantal gehandicapte coupe\'s:";
             // 
@@ -204,7 +204,7 @@
             this.materialRaisedButton1.AutoSize = true;
             this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialRaisedButton1.Font = new System.Drawing.Font("Frutiger Bold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialRaisedButton1.Icon = null;
             this.materialRaisedButton1.Location = new System.Drawing.Point(117, 311);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -221,12 +221,12 @@
             this.materialLabel6.AutoSize = true;
             this.materialLabel6.BackColor = System.Drawing.Color.White;
             this.materialLabel6.Depth = 0;
-            this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel6.Font = new System.Drawing.Font("Frutiger Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel6.Location = new System.Drawing.Point(347, 249);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
-            this.materialLabel6.Size = new System.Drawing.Size(156, 19);
+            this.materialLabel6.Size = new System.Drawing.Size(160, 18);
             this.materialLabel6.TabIndex = 49;
             this.materialLabel6.Text = "Aantal tweede klasse:";
             // 
@@ -243,12 +243,12 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.BackColor = System.Drawing.Color.White;
             this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.Font = new System.Drawing.Font("Frutiger Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel2.Location = new System.Drawing.Point(45, 234);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(56, 19);
+            this.materialLabel2.Size = new System.Drawing.Size(56, 18);
             this.materialLabel2.TabIndex = 41;
             this.materialLabel2.Text = "Coupe:";
             // 
@@ -257,12 +257,12 @@
             this.materialLabel5.AutoSize = true;
             this.materialLabel5.BackColor = System.Drawing.Color.White;
             this.materialLabel5.Depth = 0;
-            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel5.Font = new System.Drawing.Font("Frutiger Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel5.Location = new System.Drawing.Point(347, 210);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(150, 19);
+            this.materialLabel5.Size = new System.Drawing.Size(151, 18);
             this.materialLabel5.TabIndex = 48;
             this.materialLabel5.Text = "Aantal eerste klasse:";
             // 
@@ -271,12 +271,12 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.BackColor = System.Drawing.Color.White;
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.Font = new System.Drawing.Font("Frutiger Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(45, 192);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(59, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(59, 18);
             this.materialLabel1.TabIndex = 40;
             this.materialLabel1.Text = "Cabine:\r\n";
             // 
@@ -293,12 +293,12 @@
             this.materialLabel4.AutoSize = true;
             this.materialLabel4.BackColor = System.Drawing.Color.White;
             this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.Font = new System.Drawing.Font("Frutiger Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel4.Location = new System.Drawing.Point(347, 171);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(112, 19);
+            this.materialLabel4.Size = new System.Drawing.Size(115, 18);
             this.materialLabel4.TabIndex = 47;
             this.materialLabel4.Text = "Aantal coupe\'s:";
             // 
@@ -324,6 +324,7 @@
             this.materialRaisedButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton2.BackColor = System.Drawing.Color.White;
             this.materialRaisedButton2.Depth = 0;
+            this.materialRaisedButton2.Font = new System.Drawing.Font("Frutiger Bold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialRaisedButton2.Icon = null;
             this.materialRaisedButton2.Location = new System.Drawing.Point(546, 291);
             this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
@@ -343,6 +344,7 @@
             this.groupBox2.Controls.Add(this.materialLabel14);
             this.groupBox2.Controls.Add(this.materialLabel15);
             this.groupBox2.Controls.Add(this.materialSingleLineTextField3);
+            this.groupBox2.Font = new System.Drawing.Font("Frutiger Bold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(277, 227);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(254, 114);
@@ -364,12 +366,12 @@
             this.materialLabel13.AutoSize = true;
             this.materialLabel13.BackColor = System.Drawing.Color.White;
             this.materialLabel13.Depth = 0;
-            this.materialLabel13.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel13.Font = new System.Drawing.Font("Frutiger Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialLabel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel13.Location = new System.Drawing.Point(7, 72);
             this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel13.Name = "materialLabel13";
-            this.materialLabel13.Size = new System.Drawing.Size(70, 19);
+            this.materialLabel13.Size = new System.Drawing.Size(68, 18);
             this.materialLabel13.TabIndex = 7;
             this.materialLabel13.Text = "Speciaal:";
             // 
@@ -387,9 +389,10 @@
             // 
             this.radioButton5.AutoSize = true;
             this.radioButton5.BackColor = System.Drawing.Color.White;
+            this.radioButton5.Font = new System.Drawing.Font("Frutiger Bold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton5.Location = new System.Drawing.Point(54, 2);
             this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(37, 17);
+            this.radioButton5.Size = new System.Drawing.Size(39, 19);
             this.radioButton5.TabIndex = 1;
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "2e";
@@ -399,9 +402,10 @@
             // 
             this.radioButton6.AutoSize = true;
             this.radioButton6.BackColor = System.Drawing.Color.White;
+            this.radioButton6.Font = new System.Drawing.Font("Frutiger Bold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton6.Location = new System.Drawing.Point(8, 2);
             this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(37, 17);
+            this.radioButton6.Size = new System.Drawing.Size(39, 19);
             this.radioButton6.TabIndex = 0;
             this.radioButton6.TabStop = true;
             this.radioButton6.Text = "1e";
@@ -412,12 +416,12 @@
             this.materialLabel14.AutoSize = true;
             this.materialLabel14.BackColor = System.Drawing.Color.White;
             this.materialLabel14.Depth = 0;
-            this.materialLabel14.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel14.Font = new System.Drawing.Font("Frutiger Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialLabel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel14.Location = new System.Drawing.Point(7, 44);
             this.materialLabel14.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel14.Name = "materialLabel14";
-            this.materialLabel14.Size = new System.Drawing.Size(58, 19);
+            this.materialLabel14.Size = new System.Drawing.Size(56, 18);
             this.materialLabel14.TabIndex = 3;
             this.materialLabel14.Text = "Klasse:";
             // 
@@ -426,12 +430,12 @@
             this.materialLabel15.AutoSize = true;
             this.materialLabel15.BackColor = System.Drawing.Color.White;
             this.materialLabel15.Depth = 0;
-            this.materialLabel15.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel15.Font = new System.Drawing.Font("Frutiger Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialLabel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel15.Location = new System.Drawing.Point(7, 16);
             this.materialLabel15.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel15.Name = "materialLabel15";
-            this.materialLabel15.Size = new System.Drawing.Size(110, 19);
+            this.materialLabel15.Size = new System.Drawing.Size(113, 18);
             this.materialLabel15.TabIndex = 1;
             this.materialLabel15.Text = "Aantal stoelen:";
             // 
@@ -462,6 +466,7 @@
             this.groupBox1.Controls.Add(this.materialLabel11);
             this.groupBox1.Controls.Add(this.materialLabel9);
             this.groupBox1.Controls.Add(this.materialSingleLineTextField2);
+            this.groupBox1.Font = new System.Drawing.Font("Frutiger Bold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(7, 227);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(254, 114);
@@ -484,12 +489,12 @@
             this.materialLabel12.AutoSize = true;
             this.materialLabel12.BackColor = System.Drawing.Color.White;
             this.materialLabel12.Depth = 0;
-            this.materialLabel12.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel12.Font = new System.Drawing.Font("Frutiger Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialLabel12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel12.Location = new System.Drawing.Point(7, 72);
             this.materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel12.Name = "materialLabel12";
-            this.materialLabel12.Size = new System.Drawing.Size(70, 19);
+            this.materialLabel12.Size = new System.Drawing.Size(68, 18);
             this.materialLabel12.TabIndex = 7;
             this.materialLabel12.Text = "Speciaal:";
             // 
@@ -507,9 +512,10 @@
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.BackColor = System.Drawing.Color.White;
+            this.radioButton3.Font = new System.Drawing.Font("Frutiger Bold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton3.Location = new System.Drawing.Point(54, 2);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(37, 17);
+            this.radioButton3.Size = new System.Drawing.Size(39, 19);
             this.radioButton3.TabIndex = 1;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "2e";
@@ -519,9 +525,10 @@
             // 
             this.radioButton4.AutoSize = true;
             this.radioButton4.BackColor = System.Drawing.Color.White;
+            this.radioButton4.Font = new System.Drawing.Font("Frutiger Bold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton4.Location = new System.Drawing.Point(8, 2);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(37, 17);
+            this.radioButton4.Size = new System.Drawing.Size(39, 19);
             this.radioButton4.TabIndex = 0;
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "1e";
@@ -532,12 +539,12 @@
             this.materialLabel11.AutoSize = true;
             this.materialLabel11.BackColor = System.Drawing.Color.White;
             this.materialLabel11.Depth = 0;
-            this.materialLabel11.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel11.Font = new System.Drawing.Font("Frutiger Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel11.Location = new System.Drawing.Point(7, 44);
             this.materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel11.Name = "materialLabel11";
-            this.materialLabel11.Size = new System.Drawing.Size(58, 19);
+            this.materialLabel11.Size = new System.Drawing.Size(56, 18);
             this.materialLabel11.TabIndex = 3;
             this.materialLabel11.Text = "Klasse:";
             // 
@@ -546,12 +553,12 @@
             this.materialLabel9.AutoSize = true;
             this.materialLabel9.BackColor = System.Drawing.Color.White;
             this.materialLabel9.Depth = 0;
-            this.materialLabel9.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel9.Font = new System.Drawing.Font("Frutiger Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel9.Location = new System.Drawing.Point(7, 16);
             this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel9.Name = "materialLabel9";
-            this.materialLabel9.Size = new System.Drawing.Size(110, 19);
+            this.materialLabel9.Size = new System.Drawing.Size(113, 18);
             this.materialLabel9.TabIndex = 1;
             this.materialLabel9.Text = "Aantal stoelen:";
             // 
@@ -579,15 +586,16 @@
             this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Location = new System.Drawing.Point(112, 176);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(102, 22);
+            this.panel1.Size = new System.Drawing.Size(106, 26);
             this.panel1.TabIndex = 4;
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(54, 2);
+            this.radioButton2.Font = new System.Drawing.Font("Frutiger Bold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(54, 3);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(45, 17);
+            this.radioButton2.Size = new System.Drawing.Size(48, 19);
             this.radioButton2.TabIndex = 1;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Nee";
@@ -596,9 +604,10 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Frutiger Bold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.Location = new System.Drawing.Point(8, 3);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(36, 17);
+            this.radioButton1.Size = new System.Drawing.Size(37, 19);
             this.radioButton1.TabIndex = 0;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Ja";
@@ -608,12 +617,12 @@
             // 
             this.materialLabel10.AutoSize = true;
             this.materialLabel10.Depth = 0;
-            this.materialLabel10.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel10.Font = new System.Drawing.Font("Frutiger Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel10.Location = new System.Drawing.Point(6, 176);
             this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel10.Name = "materialLabel10";
-            this.materialLabel10.Size = new System.Drawing.Size(100, 19);
+            this.materialLabel10.Size = new System.Drawing.Size(105, 18);
             this.materialLabel10.TabIndex = 3;
             this.materialLabel10.Text = "Dubbeldekker";
             // 
@@ -625,17 +634,6 @@
             this.pictureBox2.Size = new System.Drawing.Size(650, 140);
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            // 
-            // materialTabSelector1
-            // 
-            this.materialTabSelector1.BaseTabControl = this.materialTabControl1;
-            this.materialTabSelector1.Depth = 0;
-            this.materialTabSelector1.Location = new System.Drawing.Point(-3, 23);
-            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(724, 40);
-            this.materialTabSelector1.TabIndex = 1;
-            this.materialTabSelector1.Text = "materialTabSelector1";
             // 
             // tabPage1
             // 
@@ -652,94 +650,6 @@
             this.tabPage1.Size = new System.Drawing.Size(664, 364);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Cabine toevoegen";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.White;
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Location = new System.Drawing.Point(7, 7);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(650, 140);
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            // 
-            // materialLabel16
-            // 
-            this.materialLabel16.AutoSize = true;
-            this.materialLabel16.BackColor = System.Drawing.Color.White;
-            this.materialLabel16.Depth = 0;
-            this.materialLabel16.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel16.Location = new System.Drawing.Point(11, 188);
-            this.materialLabel16.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel16.Name = "materialLabel16";
-            this.materialLabel16.Size = new System.Drawing.Size(53, 19);
-            this.materialLabel16.TabIndex = 1;
-            this.materialLabel16.Text = "Naam:";
-            // 
-            // materialLabel17
-            // 
-            this.materialLabel17.AutoSize = true;
-            this.materialLabel17.BackColor = System.Drawing.Color.White;
-            this.materialLabel17.Depth = 0;
-            this.materialLabel17.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel17.Location = new System.Drawing.Point(11, 224);
-            this.materialLabel17.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel17.Name = "materialLabel17";
-            this.materialLabel17.Size = new System.Drawing.Size(137, 19);
-            this.materialLabel17.TabIndex = 2;
-            this.materialLabel17.Text = "Passagiersstoelen:";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.radioButton8);
-            this.panel4.Controls.Add(this.radioButton7);
-            this.panel4.Location = new System.Drawing.Point(154, 224);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(92, 19);
-            this.panel4.TabIndex = 3;
-            // 
-            // radioButton7
-            // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.BackColor = System.Drawing.Color.White;
-            this.radioButton7.Location = new System.Drawing.Point(3, 1);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(36, 17);
-            this.radioButton7.TabIndex = 0;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "Ja";
-            this.radioButton7.UseVisualStyleBackColor = false;
-            // 
-            // radioButton8
-            // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.BackColor = System.Drawing.Color.White;
-            this.radioButton8.Location = new System.Drawing.Point(46, 1);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(45, 17);
-            this.radioButton8.TabIndex = 1;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.Text = "Nee";
-            this.radioButton8.UseVisualStyleBackColor = false;
-            // 
-            // materialRaisedButton3
-            // 
-            this.materialRaisedButton3.AutoSize = true;
-            this.materialRaisedButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton3.BackColor = System.Drawing.Color.White;
-            this.materialRaisedButton3.Depth = 0;
-            this.materialRaisedButton3.Icon = null;
-            this.materialRaisedButton3.Location = new System.Drawing.Point(11, 260);
-            this.materialRaisedButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton3.Name = "materialRaisedButton3";
-            this.materialRaisedButton3.Primary = true;
-            this.materialRaisedButton3.Size = new System.Drawing.Size(100, 36);
-            this.materialRaisedButton3.TabIndex = 4;
-            this.materialRaisedButton3.Text = "Toevoegen";
-            this.materialRaisedButton3.UseVisualStyleBackColor = false;
             // 
             // materialSingleLineTextField4
             // 
@@ -758,6 +668,108 @@
             this.materialSingleLineTextField4.TabIndex = 2;
             this.materialSingleLineTextField4.TabStop = false;
             this.materialSingleLineTextField4.UseSystemPasswordChar = false;
+            // 
+            // materialRaisedButton3
+            // 
+            this.materialRaisedButton3.AutoSize = true;
+            this.materialRaisedButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton3.BackColor = System.Drawing.Color.White;
+            this.materialRaisedButton3.Depth = 0;
+            this.materialRaisedButton3.Font = new System.Drawing.Font("Frutiger Bold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialRaisedButton3.Icon = null;
+            this.materialRaisedButton3.Location = new System.Drawing.Point(11, 260);
+            this.materialRaisedButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton3.Name = "materialRaisedButton3";
+            this.materialRaisedButton3.Primary = true;
+            this.materialRaisedButton3.Size = new System.Drawing.Size(100, 36);
+            this.materialRaisedButton3.TabIndex = 4;
+            this.materialRaisedButton3.Text = "Toevoegen";
+            this.materialRaisedButton3.UseVisualStyleBackColor = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.radioButton8);
+            this.panel4.Controls.Add(this.radioButton7);
+            this.panel4.Location = new System.Drawing.Point(154, 224);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(101, 24);
+            this.panel4.TabIndex = 3;
+            // 
+            // radioButton8
+            // 
+            this.radioButton8.AutoSize = true;
+            this.radioButton8.BackColor = System.Drawing.Color.White;
+            this.radioButton8.Font = new System.Drawing.Font("Frutiger Bold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton8.Location = new System.Drawing.Point(48, 2);
+            this.radioButton8.Name = "radioButton8";
+            this.radioButton8.Size = new System.Drawing.Size(48, 19);
+            this.radioButton8.TabIndex = 1;
+            this.radioButton8.TabStop = true;
+            this.radioButton8.Text = "Nee";
+            this.radioButton8.UseVisualStyleBackColor = false;
+            // 
+            // radioButton7
+            // 
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.BackColor = System.Drawing.Color.White;
+            this.radioButton7.Font = new System.Drawing.Font("Frutiger Bold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton7.Location = new System.Drawing.Point(3, 3);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(37, 19);
+            this.radioButton7.TabIndex = 0;
+            this.radioButton7.TabStop = true;
+            this.radioButton7.Text = "Ja";
+            this.radioButton7.UseVisualStyleBackColor = false;
+            // 
+            // materialLabel17
+            // 
+            this.materialLabel17.AutoSize = true;
+            this.materialLabel17.BackColor = System.Drawing.Color.White;
+            this.materialLabel17.Depth = 0;
+            this.materialLabel17.Font = new System.Drawing.Font("Frutiger Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialLabel17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel17.Location = new System.Drawing.Point(11, 224);
+            this.materialLabel17.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel17.Name = "materialLabel17";
+            this.materialLabel17.Size = new System.Drawing.Size(135, 18);
+            this.materialLabel17.TabIndex = 2;
+            this.materialLabel17.Text = "Passagiersstoelen:";
+            // 
+            // materialLabel16
+            // 
+            this.materialLabel16.AutoSize = true;
+            this.materialLabel16.BackColor = System.Drawing.Color.White;
+            this.materialLabel16.Depth = 0;
+            this.materialLabel16.Font = new System.Drawing.Font("Frutiger Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialLabel16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel16.Location = new System.Drawing.Point(11, 188);
+            this.materialLabel16.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel16.Name = "materialLabel16";
+            this.materialLabel16.Size = new System.Drawing.Size(52, 18);
+            this.materialLabel16.TabIndex = 1;
+            this.materialLabel16.Text = "Naam:";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.White;
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Location = new System.Drawing.Point(7, 7);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(650, 140);
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            // 
+            // materialTabSelector1
+            // 
+            this.materialTabSelector1.BaseTabControl = this.materialTabControl1;
+            this.materialTabSelector1.Depth = 0;
+            this.materialTabSelector1.Location = new System.Drawing.Point(-3, 23);
+            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector1.Name = "materialTabSelector1";
+            this.materialTabSelector1.Size = new System.Drawing.Size(724, 40);
+            this.materialTabSelector1.TabIndex = 1;
+            this.materialTabSelector1.Text = "materialTabSelector1";
             // 
             // Form1
             // 
@@ -787,9 +799,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
