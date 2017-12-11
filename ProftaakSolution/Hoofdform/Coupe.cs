@@ -22,7 +22,7 @@ namespace Hoofdform
             connection.ConnectionString = Properties.Settings.Default.connection;
             connection.Open();
 
-            string sql = "INSERT INTO Coupe(aantal_stoelen,is_dubbeldekker,klasse_links,klasse_rechts) VALUES(@param1,@param2,@param3,@param4)";
+            string sql = "INSERT INTO Coupe(aantal_stoelen,is_dubbeldekker,klasse_links,klasse_rechts,id) VALUES(@param1,@param2,@param3,@param4,@param5)";
 
             SqlCommand command = new SqlCommand(sql, connection);
             
@@ -30,7 +30,8 @@ namespace Hoofdform
             command.Parameters.Add("@param2", SqlDbType.TinyInt).Value = 1;
             command.Parameters.Add("@param3", SqlDbType.VarChar).Value = "test";
             command.Parameters.Add("@param4", SqlDbType.VarChar).Value = "test";
-            command.Parameters.AddWithValue("@param5", null);
+            command.Parameters.Add("@param5", SqlDbType.Int).Value = 1;
+            // command.Parameters.AddWithValue("@param6", null);
 
             command.ExecuteNonQuery();
             connection.Close();
