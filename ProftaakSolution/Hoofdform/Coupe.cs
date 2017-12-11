@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Hoofdform
 {
-    class Coupe
+    public class Coupe
     {
         public Coupe()
         {
@@ -30,7 +30,7 @@ namespace Hoofdform
             command.Parameters.Add("@param2", SqlDbType.TinyInt).Value = 1;
             command.Parameters.Add("@param3", SqlDbType.VarChar).Value = "test";
             command.Parameters.Add("@param4", SqlDbType.VarChar).Value = "test";
-            //command.Parameters.AddWithValue("@param5", null);
+            command.Parameters.AddWithValue("@param5", null);
 
             command.ExecuteNonQuery();
             connection.Close();
