@@ -129,7 +129,7 @@ namespace Hoofdform
             string naam = textboxNaamCoupe.Text;
 
             Coupe coupe = new Coupe();
-            coupe.CoupeToevoegen(stoelen, dubbeldekker, klasseL, klasseR, naam);
+            coupe.CoupeToevoegen(stoelen, dubbeldekker, klasseL, klasseR, naam, pictureCoupe.Image);
 
         }
 
@@ -148,6 +148,23 @@ namespace Hoofdform
 
             Cabine cabine = new Cabine();
             cabine.CabineToevoegen(naam, passagier);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialRaisedButton2_Click(object sender, EventArgs e)
+        {
+            // open file dialog   
+            OpenFileDialog open = new OpenFileDialog();
+            // image filters  
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                pictureCoupe.Image = new Bitmap(open.FileName);
+            }
         }
     }
 }

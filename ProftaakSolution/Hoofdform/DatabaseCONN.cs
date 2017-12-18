@@ -11,7 +11,7 @@ namespace Hoofdform
     {
         public static SqlConnection CONN = new SqlConnection();
 
-        public static string CONNSTRING = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='C:\Users\Zaker\Source\Repos\ProftaakNieuw\ProftaakSolution\Hoofdform\DatabaseUSF.mdf';Integrated Security=True";
+        public static string CONNSTRING = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='C:\Users\Maste\Documents\GitHub\ProftaakNieuw\ProftaakSolution\Hoofdform\DatabaseUSF.mdf';Integrated Security=True";
         
 
         /// <summary>

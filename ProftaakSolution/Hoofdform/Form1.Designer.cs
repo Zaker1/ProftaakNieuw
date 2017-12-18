@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.treinSamenstel = new System.Windows.Forms.TabPage();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
@@ -46,6 +47,8 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.coupeToevoeg = new System.Windows.Forms.TabPage();
+            this.textboxNaamCoupe = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel18 = new MaterialSkin.Controls.MaterialLabel();
             this.btnCoupeToevoegen = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -69,7 +72,7 @@
             this.radioDubbelNee = new System.Windows.Forms.RadioButton();
             this.radioDubbelJa = new System.Windows.Forms.RadioButton();
             this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureCoupe = new System.Windows.Forms.PictureBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.textboxCabineNaam = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -80,11 +83,11 @@
             this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.materialLabel18 = new MaterialSkin.Controls.MaterialLabel();
-            this.textboxNaamCoupe = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.materialLabel19 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabControl1.SuspendLayout();
             this.treinSamenstel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.coupeToevoeg.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -92,11 +95,10 @@
             this.groupBox1.SuspendLayout();
             this.panelKlasseL.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCoupe)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -131,10 +133,21 @@
             this.treinSamenstel.Controls.Add(this.materialLabel4);
             this.treinSamenstel.Location = new System.Drawing.Point(4, 22);
             this.treinSamenstel.Name = "treinSamenstel";
-            this.treinSamenstel.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.treinSamenstel.Padding = new System.Windows.Forms.Padding(3);
             this.treinSamenstel.Size = new System.Drawing.Size(664, 364);
             this.treinSamenstel.TabIndex = 0;
             this.treinSamenstel.Text = "Trein samenstellen";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(234, 234);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(23, 21);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 52;
+            this.pictureBox4.TabStop = false;
             // 
             // materialLabel8
             // 
@@ -313,6 +326,8 @@
             // coupeToevoeg
             // 
             this.coupeToevoeg.BackColor = System.Drawing.Color.White;
+            this.coupeToevoeg.Controls.Add(this.materialRaisedButton2);
+            this.coupeToevoeg.Controls.Add(this.materialLabel19);
             this.coupeToevoeg.Controls.Add(this.textboxNaamCoupe);
             this.coupeToevoeg.Controls.Add(this.materialLabel18);
             this.coupeToevoeg.Controls.Add(this.btnCoupeToevoegen);
@@ -320,13 +335,45 @@
             this.coupeToevoeg.Controls.Add(this.groupBox1);
             this.coupeToevoeg.Controls.Add(this.panel1);
             this.coupeToevoeg.Controls.Add(this.materialLabel10);
-            this.coupeToevoeg.Controls.Add(this.pictureBox2);
+            this.coupeToevoeg.Controls.Add(this.pictureCoupe);
             this.coupeToevoeg.Location = new System.Drawing.Point(4, 22);
             this.coupeToevoeg.Name = "coupeToevoeg";
-            this.coupeToevoeg.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.coupeToevoeg.Padding = new System.Windows.Forms.Padding(3);
             this.coupeToevoeg.Size = new System.Drawing.Size(664, 364);
             this.coupeToevoeg.TabIndex = 1;
             this.coupeToevoeg.Text = "Coupe toevoegen";
+            // 
+            // textboxNaamCoupe
+            // 
+            this.textboxNaamCoupe.BackColor = System.Drawing.Color.White;
+            this.textboxNaamCoupe.Depth = 0;
+            this.textboxNaamCoupe.Hint = "";
+            this.textboxNaamCoupe.Location = new System.Drawing.Point(73, 162);
+            this.textboxNaamCoupe.MaxLength = 32767;
+            this.textboxNaamCoupe.MouseState = MaterialSkin.MouseState.HOVER;
+            this.textboxNaamCoupe.Name = "textboxNaamCoupe";
+            this.textboxNaamCoupe.PasswordChar = '\0';
+            this.textboxNaamCoupe.SelectedText = "";
+            this.textboxNaamCoupe.SelectionLength = 0;
+            this.textboxNaamCoupe.SelectionStart = 0;
+            this.textboxNaamCoupe.Size = new System.Drawing.Size(173, 23);
+            this.textboxNaamCoupe.TabIndex = 2;
+            this.textboxNaamCoupe.TabStop = false;
+            this.textboxNaamCoupe.UseSystemPasswordChar = false;
+            // 
+            // materialLabel18
+            // 
+            this.materialLabel18.AutoSize = true;
+            this.materialLabel18.BackColor = System.Drawing.Color.White;
+            this.materialLabel18.Depth = 0;
+            this.materialLabel18.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel18.Location = new System.Drawing.Point(14, 164);
+            this.materialLabel18.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel18.Name = "materialLabel18";
+            this.materialLabel18.Size = new System.Drawing.Size(53, 19);
+            this.materialLabel18.TabIndex = 8;
+            this.materialLabel18.Text = "Naam:";
             // 
             // btnCoupeToevoegen
             // 
@@ -336,7 +383,7 @@
             this.btnCoupeToevoegen.Depth = 0;
             this.btnCoupeToevoegen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCoupeToevoegen.Icon = null;
-            this.btnCoupeToevoegen.Location = new System.Drawing.Point(546, 291);
+            this.btnCoupeToevoegen.Location = new System.Drawing.Point(546, 298);
             this.btnCoupeToevoegen.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCoupeToevoegen.Name = "btnCoupeToevoegen";
             this.btnCoupeToevoegen.Primary = true;
@@ -356,7 +403,7 @@
             this.groupBox2.Controls.Add(this.materialLabel15);
             this.groupBox2.Controls.Add(this.textboxStoelenR);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(277, 227);
+            this.groupBox2.Location = new System.Drawing.Point(277, 234);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(254, 114);
             this.groupBox2.TabIndex = 6;
@@ -479,7 +526,7 @@
             this.groupBox1.Controls.Add(this.materialLabel9);
             this.groupBox1.Controls.Add(this.textboxStoelenL);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(7, 227);
+            this.groupBox1.Location = new System.Drawing.Point(7, 234);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(254, 114);
             this.groupBox1.TabIndex = 5;
@@ -598,7 +645,7 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.radioDubbelNee);
             this.panel1.Controls.Add(this.radioDubbelJa);
-            this.panel1.Location = new System.Drawing.Point(386, 179);
+            this.panel1.Location = new System.Drawing.Point(120, 199);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(112, 26);
             this.panel1.TabIndex = 4;
@@ -608,7 +655,7 @@
             this.radioDubbelNee.AutoSize = true;
             this.radioDubbelNee.BackColor = System.Drawing.Color.White;
             this.radioDubbelNee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioDubbelNee.Location = new System.Drawing.Point(54, 3);
+            this.radioDubbelNee.Location = new System.Drawing.Point(54, 4);
             this.radioDubbelNee.Name = "radioDubbelNee";
             this.radioDubbelNee.Size = new System.Drawing.Size(55, 20);
             this.radioDubbelNee.TabIndex = 1;
@@ -621,7 +668,7 @@
             this.radioDubbelJa.AutoSize = true;
             this.radioDubbelJa.BackColor = System.Drawing.Color.White;
             this.radioDubbelJa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioDubbelJa.Location = new System.Drawing.Point(8, 3);
+            this.radioDubbelJa.Location = new System.Drawing.Point(8, 4);
             this.radioDubbelJa.Name = "radioDubbelJa";
             this.radioDubbelJa.Size = new System.Drawing.Size(43, 20);
             this.radioDubbelJa.TabIndex = 0;
@@ -636,22 +683,24 @@
             this.materialLabel10.Depth = 0;
             this.materialLabel10.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel10.Location = new System.Drawing.Point(280, 183);
+            this.materialLabel10.Location = new System.Drawing.Point(14, 204);
             this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel10.Name = "materialLabel10";
             this.materialLabel10.Size = new System.Drawing.Size(100, 19);
             this.materialLabel10.TabIndex = 3;
             this.materialLabel10.Text = "Dubbeldekker";
             // 
-            // pictureBox2
+            // pictureCoupe
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(7, 7);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(650, 140);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.pictureCoupe.BackColor = System.Drawing.Color.White;
+            this.pictureCoupe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureCoupe.Location = new System.Drawing.Point(7, 7);
+            this.pictureCoupe.Name = "pictureCoupe";
+            this.pictureCoupe.Size = new System.Drawing.Size(650, 140);
+            this.pictureCoupe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureCoupe.TabIndex = 0;
+            this.pictureCoupe.TabStop = false;
+            this.pictureCoupe.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // tabPage1
             // 
@@ -664,7 +713,7 @@
             this.tabPage1.Controls.Add(this.pictureBox3);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(664, 364);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Cabine toevoegen";
@@ -790,48 +839,37 @@
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
-            // materialLabel18
+            // materialLabel19
             // 
-            this.materialLabel18.AutoSize = true;
-            this.materialLabel18.BackColor = System.Drawing.Color.White;
-            this.materialLabel18.Depth = 0;
-            this.materialLabel18.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel18.Location = new System.Drawing.Point(14, 183);
-            this.materialLabel18.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel18.Name = "materialLabel18";
-            this.materialLabel18.Size = new System.Drawing.Size(53, 19);
-            this.materialLabel18.TabIndex = 8;
-            this.materialLabel18.Text = "Naam:";
+            this.materialLabel19.AutoSize = true;
+            this.materialLabel19.BackColor = System.Drawing.Color.White;
+            this.materialLabel19.Depth = 0;
+            this.materialLabel19.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel19.Location = new System.Drawing.Point(284, 188);
+            this.materialLabel19.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel19.Name = "materialLabel19";
+            this.materialLabel19.Size = new System.Drawing.Size(84, 19);
+            this.materialLabel19.TabIndex = 9;
+            this.materialLabel19.Text = "Afbeelding:";
             // 
-            // textboxNaamCoupe
+            // materialRaisedButton2
             // 
-            this.textboxNaamCoupe.BackColor = System.Drawing.Color.White;
-            this.textboxNaamCoupe.Depth = 0;
-            this.textboxNaamCoupe.Hint = "";
-            this.textboxNaamCoupe.Location = new System.Drawing.Point(73, 181);
-            this.textboxNaamCoupe.MaxLength = 32767;
-            this.textboxNaamCoupe.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textboxNaamCoupe.Name = "textboxNaamCoupe";
-            this.textboxNaamCoupe.PasswordChar = '\0';
-            this.textboxNaamCoupe.SelectedText = "";
-            this.textboxNaamCoupe.SelectionLength = 0;
-            this.textboxNaamCoupe.SelectionStart = 0;
-            this.textboxNaamCoupe.Size = new System.Drawing.Size(173, 23);
-            this.textboxNaamCoupe.TabIndex = 2;
-            this.textboxNaamCoupe.TabStop = false;
-            this.textboxNaamCoupe.UseSystemPasswordChar = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(234, 234);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(23, 21);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 52;
-            this.pictureBox4.TabStop = false;
+            this.materialRaisedButton2.AutoSize = true;
+            this.materialRaisedButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton2.BackColor = System.Drawing.Color.White;
+            this.materialRaisedButton2.Depth = 0;
+            this.materialRaisedButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialRaisedButton2.Icon = null;
+            this.materialRaisedButton2.Location = new System.Drawing.Point(374, 180);
+            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton2.Name = "materialRaisedButton2";
+            this.materialRaisedButton2.Primary = true;
+            this.materialRaisedButton2.Size = new System.Drawing.Size(91, 36);
+            this.materialRaisedButton2.TabIndex = 10;
+            this.materialRaisedButton2.Text = "Uploaden";
+            this.materialRaisedButton2.UseVisualStyleBackColor = false;
+            this.materialRaisedButton2.Click += new System.EventHandler(this.materialRaisedButton2_Click);
             // 
             // Form1
             // 
@@ -845,6 +883,7 @@
             this.materialTabControl1.ResumeLayout(false);
             this.treinSamenstel.ResumeLayout(false);
             this.treinSamenstel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.coupeToevoeg.ResumeLayout(false);
             this.coupeToevoeg.PerformLayout();
@@ -858,13 +897,12 @@
             this.panelKlasseL.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCoupe)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -895,7 +933,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel10;
         private MaterialSkin.Controls.MaterialSingleLineTextField textboxStoelenL;
         private MaterialSkin.Controls.MaterialLabel materialLabel9;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureCoupe;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private MaterialSkin.Controls.MaterialLabel materialLabel13;
@@ -924,6 +962,8 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField textboxNaamCoupe;
         private MaterialSkin.Controls.MaterialLabel materialLabel18;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
+        private MaterialSkin.Controls.MaterialLabel materialLabel19;
     }
 }
 
