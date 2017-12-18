@@ -595,6 +595,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.radioDubbelNee);
             this.panel1.Controls.Add(this.radioDubbelJa);
             this.panel1.Location = new System.Drawing.Point(386, 179);
@@ -605,6 +606,7 @@
             // radioDubbelNee
             // 
             this.radioDubbelNee.AutoSize = true;
+            this.radioDubbelNee.BackColor = System.Drawing.Color.White;
             this.radioDubbelNee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioDubbelNee.Location = new System.Drawing.Point(54, 3);
             this.radioDubbelNee.Name = "radioDubbelNee";
@@ -612,11 +614,12 @@
             this.radioDubbelNee.TabIndex = 1;
             this.radioDubbelNee.TabStop = true;
             this.radioDubbelNee.Text = "Nee";
-            this.radioDubbelNee.UseVisualStyleBackColor = true;
+            this.radioDubbelNee.UseVisualStyleBackColor = false;
             // 
             // radioDubbelJa
             // 
             this.radioDubbelJa.AutoSize = true;
+            this.radioDubbelJa.BackColor = System.Drawing.Color.White;
             this.radioDubbelJa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioDubbelJa.Location = new System.Drawing.Point(8, 3);
             this.radioDubbelJa.Name = "radioDubbelJa";
@@ -624,11 +627,12 @@
             this.radioDubbelJa.TabIndex = 0;
             this.radioDubbelJa.TabStop = true;
             this.radioDubbelJa.Text = "Ja";
-            this.radioDubbelJa.UseVisualStyleBackColor = true;
+            this.radioDubbelJa.UseVisualStyleBackColor = false;
             // 
             // materialLabel10
             // 
             this.materialLabel10.AutoSize = true;
+            this.materialLabel10.BackColor = System.Drawing.Color.White;
             this.materialLabel10.Depth = 0;
             this.materialLabel10.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -821,7 +825,7 @@
             // 
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(235, 232);
+            this.pictureBox4.Location = new System.Drawing.Point(234, 234);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(23, 21);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
