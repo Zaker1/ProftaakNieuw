@@ -312,6 +312,7 @@
             // 
             // coupeToevoeg
             // 
+            this.coupeToevoeg.BackColor = System.Drawing.Color.White;
             this.coupeToevoeg.Controls.Add(this.textboxNaamCoupe);
             this.coupeToevoeg.Controls.Add(this.materialLabel18);
             this.coupeToevoeg.Controls.Add(this.btnCoupeToevoegen);
@@ -326,7 +327,6 @@
             this.coupeToevoeg.Size = new System.Drawing.Size(664, 364);
             this.coupeToevoeg.TabIndex = 1;
             this.coupeToevoeg.Text = "Coupe toevoegen";
-            this.coupeToevoeg.UseVisualStyleBackColor = true;
             // 
             // btnCoupeToevoegen
             // 
@@ -600,7 +600,7 @@
             this.panel1.Controls.Add(this.radioDubbelJa);
             this.panel1.Location = new System.Drawing.Point(386, 179);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(106, 26);
+            this.panel1.Size = new System.Drawing.Size(112, 26);
             this.panel1.TabIndex = 4;
             // 
             // radioDubbelNee
