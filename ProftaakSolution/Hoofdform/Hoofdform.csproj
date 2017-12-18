@@ -63,7 +63,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Coupe.cs" />
+    <Compile Include="Trein.cs" />
+    <Compile Include="DatabaseCONN.cs" />
     <Compile Include="DatabaseUSFDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

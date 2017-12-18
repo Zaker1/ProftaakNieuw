@@ -16,6 +16,7 @@ namespace Hoofdform
 {
     public partial class Form1 : MaterialForm
     {
+        SqlCommand cmd = new SqlCommand();
         public Form1()
         {
            InitializeComponent();
@@ -70,29 +71,21 @@ namespace Hoofdform
                 DatabaseCon.CONN.Close();
             */
 
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = Properties.Settings.Default.DatabaseUSFConnectionString;
-            connection.Open();
+            bool connection = DatabaseCONN.getConnectieString();
+            DatabaseCONN.CONN.Open();
+            cmd = DatabaseCONN.CONN.CreateCommand();
+            cmd.CommandText = "Select * from Perron";
 
-            SqlCommand command = new SqlCommand();
-            command = connection.CreateCommand();
-            command.CommandText = "Select * from Perron";
-            SqlDataAdapter da = new SqlDataAdapter(command);
-
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            command.ExecuteNonQuery();
-            connection.Close();
+            cmd.ExecuteNonQuery();
+            DatabaseCONN.CONN.Close();
 
             cmbCoupe.DataSource = dt;
             cmbCoupe.DisplayMember = "naam";
             cmbCoupe.ValueMember = "id";
-
-            // DataSet ds = new DataSet();
-            // da.Fill(ds);
-            // dataGridView1.AutoGenerateColumns = true;
-            // dataGridView1.DataSource = ds.Tables;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -102,8 +95,59 @@ namespace Hoofdform
 
         private void btnCoupeToevoegen_Click(object sender, EventArgs e)
         {
-            Coupe coupe = new Coupe();
-            coupe.Toevoegen();
+            int stoelen = Convert.ToInt32(textboxStoelenL.Text) + Convert.ToInt32(textboxStoelenR.Text);
+            bool dubbeldekker;
+            if (radioDubbelJa.Checked)
+            {
+                dubbeldekker = true;
+            }
+            else
+            {
+                dubbeldekker = false;
+            }
+
+            string klasseL;
+            string klasseR;
+            if (radio1eL.Checked)
+            {
+                klasseL = "1e";
+            }
+            else
+            {
+                klasseL = "2e";
+            }
+            
+            if (radio1eR.Checked)
+            {
+                klasseR = "1e";
+            }
+            else
+            {
+                klasseR = "2e";
+            }
+
+            string naam = textboxNaamCoupe.Text;
+
+            Trein coupe = new Trein();
+            coupe.CoupeToevoegen(stoelen, dubbeldekker, klasseL, klasseR, naam);
+
+        }
+
+        private void materialRaisedButton3_Click(object sender, EventArgs e)
+        {
+            string naam = textboxCabineNaam.Text;
+            bool passagier;
+            if (radioPassagierJa.Checked)
+            {
+                passagier = true;
+            }
+            else
+            {
+                passagier = false;
+            }
+
+            Trein cabine = new Trein();
+            cabine.CabineToevoegen(naam, passagier);
         }
     }
 }
