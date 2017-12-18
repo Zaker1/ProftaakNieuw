@@ -128,7 +128,7 @@ namespace Hoofdform
 
             string naam = textboxNaamCoupe.Text;
 
-            Trein coupe = new Trein();
+            Coupe coupe = new Coupe();
             coupe.CoupeToevoegen(stoelen, dubbeldekker, klasseL, klasseR, naam);
 
         }
@@ -146,7 +146,7 @@ namespace Hoofdform
                 passagier = false;
             }
 
-            Trein cabine = new Trein();
+            Cabine cabine = new Cabine();
             cabine.CabineToevoegen(naam, passagier);
         }
     }

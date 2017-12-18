@@ -10,11 +10,11 @@ using System.Windows.Forms;
 namespace Hoofdform
 {
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable")]
-    public class Trein
+    public class Coupe
     {
         SqlCommand cmd = new SqlCommand();
 
-        public Trein()
+        public Coupe()
         {
 
         }
@@ -38,19 +38,6 @@ namespace Hoofdform
             DatabaseCONN.CONN.Close();
         }
 
-        public void CabineToevoegen(string naam, bool passagiers_plekken)
-        {
-            bool connection = DatabaseCONN.getConnectieString();
-            DatabaseCONN.CONN.Open();
-            cmd = DatabaseCONN.CONN.CreateCommand();
-            cmd.CommandText = "INSERT INTO dbo.TreinCabine(naam, passagiers_plekken) VALUES(@param1, @param2)";
-
-            cmd.Parameters.AddWithValue("@param1", naam);
-            cmd.Parameters.AddWithValue("@param2", passagiers_plekken);
-
-            cmd.ExecuteNonQuery();
-
-            DatabaseCONN.CONN.Close();
-        }
+        
     }
 }
