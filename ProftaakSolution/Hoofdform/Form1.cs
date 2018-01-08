@@ -12,11 +12,12 @@ using MaterialSkin.Controls;
 using MaterialSkin.Animations;
 using System.Data.SqlClient;
 
+
 namespace Hoofdform
 {
     public partial class Form1 : MaterialForm
     {
-        SqlCommand cmd = new SqlCommand();
+        static string ConnectionString =  @"Server=mssql.fhict.local;Database=dbi392341;User Id = dbi392341; Password=Proftaak123;";
         public Form1()
         {
            InitializeComponent();
@@ -35,6 +36,28 @@ namespace Hoofdform
                 TextShade.BLACK
             );
 
+            string query = "SELECT naam, id FROM Coupe";
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (SqlCommand cmd = new SqlCommand(query, connection))
+            {
+                connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                cmbCabine.DisplayMember = "naam";
+                cmbCabine.ValueMember = "id";
+
+                List<Object> resultCoupes = new List<object>();
+
+                while (reader.Read())
+                {
+                    resultCoupes.Add(reader["naam"]);
+                }
+
+                cmbCabine.DataSource = resultCoupes;
+               
+                int test = Convert.ToInt32(cmbCabine.SelectedValue);
+            }
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -50,42 +73,7 @@ namespace Hoofdform
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            /*
-                DatabaseCon.CONN.Open();
-                cmd = DatabaseCon.CONN.CreateCommand();
-                cmd.CommandText = "SELECT * FROM dbo.Boek WHERE isbn_nummer ='" + data.isbn_nummer + "'";
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
-                {
-                    data.titel = (dr["titel"].ToString());
-                    data.auteur = (dr["auteur"].ToString());
-                    data.beschrijving = (dr["beschrijving"].ToString());
-                    data.genre = (dr["genre"].ToString());
-                    data.prijs = (Convert.ToDecimal(dr["prijs"].ToString()));
-                    data.uitgeversector_naam = (dr["uitgeversector_naam"].ToString());
-                }
-                cmd.ExecuteNonQuery();
-                DatabaseCon.CONN.Close();
-            */
-
-            bool connection = DatabaseCONN.getConnectieString();
-            DatabaseCONN.CONN.Open();
-            cmd = DatabaseCONN.CONN.CreateCommand();
-            cmd.CommandText = "Select * from Perron";
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            cmd.ExecuteNonQuery();
-            DatabaseCONN.CONN.Close();
-
-            cmbCoupe.DataSource = dt;
-            cmbCoupe.DisplayMember = "naam";
-            cmbCoupe.ValueMember = "id";
+            
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -95,7 +83,17 @@ namespace Hoofdform
 
         private void btnCoupeToevoegen_Click(object sender, EventArgs e)
         {
-            int stoelen = Convert.ToInt32(textboxStoelenL.Text) + Convert.ToInt32(textboxStoelenR.Text);
+            int stoelen = 0;
+            try
+            {
+                stoelen = Convert.ToInt32(textboxStoelenL.Text) + Convert.ToInt32(textboxStoelenR.Text);
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Invoer is ongeldig, vul alles in!");
+            }
+            
+            
             bool dubbeldekker;
             if (radioDubbelJa.Checked)
             {
@@ -130,6 +128,7 @@ namespace Hoofdform
 
             Coupe coupe = new Coupe();
             coupe.CoupeToevoegen(stoelen, dubbeldekker, klasseL, klasseR, naam, pictureCoupe.Image);
+            MessageBox.Show("Coupe is toegevoegd");
 
         }
 

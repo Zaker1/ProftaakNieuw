@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace Hoofdform
 {
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable")]
     public class Coupe
     {
-        SqlCommand cmd = new SqlCommand();
+        static string ConnectionString = @"Server=mssql.fhict.local;Database=dbi392341;User Id = dbi392341; Password=Proftaak123;";
 
         public Coupe()
         {
@@ -25,23 +26,21 @@ namespace Hoofdform
         {
             byte [] image = ImageConverter.imageToByteArray(img);
 
-            bool connection = DatabaseCONN.getConnectieString();
-            DatabaseCONN.CONN.Open();
-            cmd = DatabaseCONN.CONN.CreateCommand();
-            cmd.CommandText = "INSERT INTO dbo.Coupe(aantal_stoelen,is_dubbeldekker,klasse_links,klasse_rechts,image, naam) VALUES(@param1,@param2,@param3,@param4,@param5, @param6)";
+            string query = "INSERT INTO dbo.Coupe(aantal_stoelen,is_dubbeldekker,klasse_links,klasse_rechts,image, naam) VALUES(@param1,@param2,@param3,@param4,@param5, @param6)";
 
-            cmd.Parameters.AddWithValue("@param1", stoelen);
-            cmd.Parameters.AddWithValue("@param2", dubbeldekker);
-            cmd.Parameters.AddWithValue("@param3", klasseLinks);
-            cmd.Parameters.AddWithValue("@param4", klasseRechts);
-            cmd.Parameters.AddWithValue("@param5", image);
-            cmd.Parameters.AddWithValue("@param6", naam);
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (SqlCommand cmd = new SqlCommand(query, connection))
+            {
+                cmd.Parameters.AddWithValue("@param1", stoelen);
+                cmd.Parameters.AddWithValue("@param2", dubbeldekker);
+                cmd.Parameters.AddWithValue("@param3", klasseLinks);
+                cmd.Parameters.AddWithValue("@param4", klasseRechts);
+                cmd.Parameters.AddWithValue("@param5", image);
+                cmd.Parameters.AddWithValue("@param6", naam);
 
-            cmd.ExecuteNonQuery();
-
-            DatabaseCONN.CONN.Close();
-        }
-
-        
+                connection.Open();
+                cmd.ExecuteNonQuery();
+            }
+        } 
     }
 }
