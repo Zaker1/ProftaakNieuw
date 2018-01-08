@@ -40,5 +40,7 @@ namespace Hoofdform
 
             DatabaseCONN.CONN.Close();
         }
+
+        
     }
 }

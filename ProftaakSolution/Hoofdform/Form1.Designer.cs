@@ -37,8 +37,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.textAantal = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialStelSamen = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.cmbCabine = new System.Windows.Forms.ComboBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -60,7 +60,6 @@
             this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
             this.textboxStoelenR = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
             this.panelKlasseL = new System.Windows.Forms.Panel();
             this.radio2eL = new System.Windows.Forms.RadioButton();
             this.radio1eL = new System.Windows.Forms.RadioButton();
@@ -84,7 +83,6 @@
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialLabel20 = new MaterialSkin.Controls.MaterialLabel();
             this.materialToevoegen = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.checkLinks = new System.Windows.Forms.CheckBox();
             this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
             this.checkSpeciaal = new MaterialSkin.Controls.MaterialCheckBox();
             this.materialTabControl1.SuspendLayout();
@@ -124,8 +122,8 @@
             this.treinSamenstel.Controls.Add(this.pictureBox1);
             this.treinSamenstel.Controls.Add(this.materialLabel3);
             this.treinSamenstel.Controls.Add(this.materialLabel7);
-            this.treinSamenstel.Controls.Add(this.materialSingleLineTextField1);
-            this.treinSamenstel.Controls.Add(this.materialRaisedButton1);
+            this.treinSamenstel.Controls.Add(this.textAantal);
+            this.treinSamenstel.Controls.Add(this.materialStelSamen);
             this.treinSamenstel.Controls.Add(this.materialLabel6);
             this.treinSamenstel.Controls.Add(this.cmbCabine);
             this.treinSamenstel.Controls.Add(this.materialLabel2);
@@ -204,40 +202,40 @@
             this.materialLabel7.TabIndex = 50;
             this.materialLabel7.Text = "Aantal gehandicapte coupe\'s:";
             // 
-            // materialSingleLineTextField1
+            // textAantal
             // 
-            this.materialSingleLineTextField1.BackColor = System.Drawing.Color.White;
-            this.materialSingleLineTextField1.Depth = 0;
-            this.materialSingleLineTextField1.Hint = "";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(107, 272);
-            this.materialSingleLineTextField1.MaxLength = 32767;
-            this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
-            this.materialSingleLineTextField1.PasswordChar = '\0';
-            this.materialSingleLineTextField1.SelectedText = "";
-            this.materialSingleLineTextField1.SelectionLength = 0;
-            this.materialSingleLineTextField1.SelectionStart = 0;
-            this.materialSingleLineTextField1.Size = new System.Drawing.Size(121, 23);
-            this.materialSingleLineTextField1.TabIndex = 44;
-            this.materialSingleLineTextField1.TabStop = false;
-            this.materialSingleLineTextField1.UseSystemPasswordChar = false;
+            this.textAantal.BackColor = System.Drawing.Color.White;
+            this.textAantal.Depth = 0;
+            this.textAantal.Hint = "";
+            this.textAantal.Location = new System.Drawing.Point(107, 272);
+            this.textAantal.MaxLength = 32767;
+            this.textAantal.MouseState = MaterialSkin.MouseState.HOVER;
+            this.textAantal.Name = "textAantal";
+            this.textAantal.PasswordChar = '\0';
+            this.textAantal.SelectedText = "";
+            this.textAantal.SelectionLength = 0;
+            this.textAantal.SelectionStart = 0;
+            this.textAantal.Size = new System.Drawing.Size(121, 23);
+            this.textAantal.TabIndex = 44;
+            this.textAantal.TabStop = false;
+            this.textAantal.UseSystemPasswordChar = false;
             // 
-            // materialRaisedButton1
+            // materialStelSamen
             // 
-            this.materialRaisedButton1.AutoSize = true;
-            this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(117, 311);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(103, 36);
-            this.materialRaisedButton1.TabIndex = 46;
-            this.materialRaisedButton1.Text = "Stel samen";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
-            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
+            this.materialStelSamen.AutoSize = true;
+            this.materialStelSamen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialStelSamen.Depth = 0;
+            this.materialStelSamen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialStelSamen.Icon = null;
+            this.materialStelSamen.Location = new System.Drawing.Point(117, 311);
+            this.materialStelSamen.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialStelSamen.Name = "materialStelSamen";
+            this.materialStelSamen.Primary = true;
+            this.materialStelSamen.Size = new System.Drawing.Size(103, 36);
+            this.materialStelSamen.TabIndex = 46;
+            this.materialStelSamen.Text = "Stel samen";
+            this.materialStelSamen.UseVisualStyleBackColor = true;
+            this.materialStelSamen.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
             // materialLabel6
             // 
@@ -530,8 +528,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.checkLinks);
-            this.groupBox1.Controls.Add(this.materialLabel12);
             this.groupBox1.Controls.Add(this.panelKlasseL);
             this.groupBox1.Controls.Add(this.materialLabel11);
             this.groupBox1.Controls.Add(this.materialLabel9);
@@ -544,20 +540,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Links";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // materialLabel12
-            // 
-            this.materialLabel12.AutoSize = true;
-            this.materialLabel12.BackColor = System.Drawing.Color.White;
-            this.materialLabel12.Depth = 0;
-            this.materialLabel12.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel12.Location = new System.Drawing.Point(7, 72);
-            this.materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel12.Name = "materialLabel12";
-            this.materialLabel12.Size = new System.Drawing.Size(70, 19);
-            this.materialLabel12.TabIndex = 7;
-            this.materialLabel12.Text = "Speciaal:";
             // 
             // panelKlasseL
             // 
@@ -872,15 +854,6 @@
             this.materialToevoegen.UseVisualStyleBackColor = true;
             this.materialToevoegen.Click += new System.EventHandler(this.materialToevoegen_Click);
             // 
-            // checkLinks
-            // 
-            this.checkLinks.AutoSize = true;
-            this.checkLinks.Location = new System.Drawing.Point(118, 76);
-            this.checkLinks.Name = "checkLinks";
-            this.checkLinks.Size = new System.Drawing.Size(15, 14);
-            this.checkLinks.TabIndex = 8;
-            this.checkLinks.UseVisualStyleBackColor = true;
-            // 
             // materialLabel13
             // 
             this.materialLabel13.AutoSize = true;
@@ -955,9 +928,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
+        private MaterialSkin.Controls.MaterialSingleLineTextField textAantal;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialRaisedButton materialStelSamen;
         private System.Windows.Forms.ComboBox cmbCabine;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
@@ -979,7 +952,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel14;
         private MaterialSkin.Controls.MaterialLabel materialLabel15;
         private MaterialSkin.Controls.MaterialSingleLineTextField textboxStoelenR;
-        private MaterialSkin.Controls.MaterialLabel materialLabel12;
         private System.Windows.Forms.Panel panelKlasseL;
         private System.Windows.Forms.RadioButton radio2eL;
         private System.Windows.Forms.RadioButton radio1eL;
@@ -1001,7 +973,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel19;
         private MaterialSkin.Controls.MaterialRaisedButton materialToevoegen;
         private MaterialSkin.Controls.MaterialLabel materialLabel20;
-        private System.Windows.Forms.CheckBox checkLinks;
         private MaterialSkin.Controls.MaterialCheckBox checkSpeciaal;
         private MaterialSkin.Controls.MaterialLabel materialLabel13;
     }

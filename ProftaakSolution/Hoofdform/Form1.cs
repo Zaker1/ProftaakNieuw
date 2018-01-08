@@ -35,7 +35,7 @@ namespace Hoofdform
                 Primary.Yellow600, Accent.Blue400,
                 TextShade.BLACK
             );
-
+            // query voor naam id ophalen van coupes
             string query = "SELECT naam, id FROM Coupe";
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
@@ -57,7 +57,31 @@ namespace Hoofdform
                 cmbCoupe.DisplayMember = "naam";
                 cmbCoupe.ValueMember = "id";
 
-                int test = Convert.ToInt32(cmbCoupe.SelectedValue);
+                
+            }
+            // query voor naam id ophalen van cabines
+            string query1 = "SELECT naam, id FROM TreinCabine";
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (SqlCommand cmd = new SqlCommand(query1, connection))
+            {
+
+                connection.Open();
+
+
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                cmd.ExecuteNonQuery();
+
+
+                cmbCabine.DataSource = dt;
+                cmbCabine.DisplayMember = "naam";
+                cmbCabine.ValueMember = "id";
+
+                
             }
         }
 
@@ -74,7 +98,16 @@ namespace Hoofdform
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            
+            Trein trein = new Trein();
+            int id = Convert.ToInt32(cmbCoupe.SelectedValue);
+            List<int> list = new List<int>();
+
+            for (int i = 0; i < Convert.ToInt32(textAantal.Text); i++)
+            {
+                list.Add(id);
+            }
+
+            trein.TreinOntvangen(list);
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -109,20 +142,20 @@ namespace Hoofdform
             string klasseR;
             if (radio1eL.Checked)
             {
-                klasseL = "1e";
+                klasseL = "1";
             }
             else
             {
-                klasseL = "2e";
+                klasseL = "2";
             }
             
             if (radio1eR.Checked)
             {
-                klasseR = "1e";
+                klasseR = "1";
             }
             else
             {
-                klasseR = "2e";
+                klasseR = "2";
             }
 
             string naam = textboxNaamCoupe.Text;

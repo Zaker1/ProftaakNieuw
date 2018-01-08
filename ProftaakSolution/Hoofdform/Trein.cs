@@ -10,13 +10,14 @@ namespace Hoofdform
     public class Trein
     {
         List<int> listCoupe;
-        Locomotief locomotief;
+        
         static string ConnectionString = @"Server=mssql.fhict.local;Database=dbi392341;User Id = dbi392341; Password=Proftaak123;";
 
         string speciaal;
         string klasseR;
         string klasseL;
         string stoelenInCoupe;
+        string compleet;
         
 
         public Trein()
@@ -24,10 +25,10 @@ namespace Hoofdform
 
         }
 
-        public void TreinOntvangen(List<int> list, Locomotief loco)
+        public void TreinOntvangen(List<int> list)
         {
-            locomotief = loco;
             listCoupe = list;
+            CoupeOphalen();
         }
 
         public void CoupeOphalen()
@@ -49,6 +50,15 @@ namespace Hoofdform
                     stoelenInCoupe = reader["aantal_stoelen"].ToString();
                 }
             }
+            if (speciaal == "True")
+            {
+                speciaal = "1";
+            }
+            else
+            { 
+                speciaal = "0";
+            }
+            compleet = String.Format("{0},{1},{2},{3}", speciaal, klasseR, klasseL, stoelenInCoupe);
         }
     }
 }
