@@ -41,22 +41,23 @@ namespace Hoofdform
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             using (SqlCommand cmd = new SqlCommand(query, connection))
             {
+
                 connection.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
+                
+                
 
-                cmbCabine.DisplayMember = "naam";
-                cmbCabine.ValueMember = "id";
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
 
-                List<Object> resultCoupes = new List<object>();
+                cmd.ExecuteNonQuery();
+                
 
-                while (reader.Read())
-                {
-                    resultCoupes.Add(reader["naam"]);
-                }
+                cmbCoupe.DataSource = dt;
+                cmbCoupe.DisplayMember = "naam";
+                cmbCoupe.ValueMember = "id";
 
-                cmbCabine.DataSource = resultCoupes;
-               
-                int test = Convert.ToInt32(cmbCabine.SelectedValue);
+                int test = Convert.ToInt32(cmbCoupe.SelectedValue);
             }
         }
 
