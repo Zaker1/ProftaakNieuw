@@ -7,10 +7,13 @@ using System.Data.SqlClient;
 
 namespace Hoofdform
 {
-    public class Cabine
+    public class Locomotief
     {
         SqlCommand cmd = new SqlCommand();
-        public Cabine()
+
+
+
+        public Locomotief()
         {
                
         }
@@ -25,7 +28,15 @@ namespace Hoofdform
             cmd.Parameters.AddWithValue("@param1", naam);
             cmd.Parameters.AddWithValue("@param2", passagiers_plekken);
 
-            cmd.ExecuteNonQuery();
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                
+            }
 
             DatabaseCONN.CONN.Close();
         }

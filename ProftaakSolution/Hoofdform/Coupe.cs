@@ -22,11 +22,11 @@ namespace Hoofdform
         }
 
 
-        public void CoupeToevoegen(int stoelen, bool dubbeldekker, string klasseLinks, string klasseRechts, string naam, Image img)
+        public void CoupeToevoegen(int stoelen, bool dubbeldekker, string klasseLinks, string klasseRechts, string naam, Image img, bool speciaal)
         {
             byte [] image = ImageConverter.imageToByteArray(img);
 
-            string query = "INSERT INTO dbo.Coupe(aantal_stoelen,is_dubbeldekker,klasse_links,klasse_rechts,image, naam) VALUES(@param1,@param2,@param3,@param4,@param5, @param6)";
+            string query = "INSERT INTO dbo.Coupe(aantal_stoelen,is_dubbeldekker,klasse_links,klasse_rechts,image, naam, speciaal) VALUES(@param1,@param2,@param3,@param4,@param5, @param6, @param7)";
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             using (SqlCommand cmd = new SqlCommand(query, connection))
@@ -37,6 +37,7 @@ namespace Hoofdform
                 cmd.Parameters.AddWithValue("@param4", klasseRechts);
                 cmd.Parameters.AddWithValue("@param5", image);
                 cmd.Parameters.AddWithValue("@param6", naam);
+                cmd.Parameters.AddWithValue("@param7", speciaal);
 
                 connection.Open();
                 cmd.ExecuteNonQuery();

@@ -64,7 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cabine.cs" />
+    <Compile Include="Locomotief.cs" />
     <Compile Include="Coupe.cs" />
     <Compile Include="DatabaseCONN.cs" />
     <Compile Include="DatabaseUSFDataSet1.Designer.cs">
@@ -81,6 +81,7 @@
     <Compile Include="ImageConverter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Trein.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
