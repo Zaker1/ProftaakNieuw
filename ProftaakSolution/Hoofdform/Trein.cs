@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.IO.Ports;
 
 namespace Hoofdform
 {
     public class Trein
     {
+        public SerialPort arduinoPoort;
         List<int> listCoupe;
         
         static string ConnectionString = @"Server=mssql.fhict.local;Database=dbi392341;User Id = dbi392341; Password=Proftaak123;";
@@ -59,6 +61,10 @@ namespace Hoofdform
                 speciaal = "0";
             }
             compleet = String.Format("{0},{1},{2},{3}", speciaal, klasseR, klasseL, stoelenInCoupe);
+
+            arduinoPoort.Open();
+            arduinoPoort.WriteLine(compleet);
+            arduinoPoort.Close();
         }
     }
 }
