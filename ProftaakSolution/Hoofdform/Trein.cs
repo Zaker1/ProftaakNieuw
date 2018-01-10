@@ -22,6 +22,11 @@ namespace Hoofdform
             this.coupes = coupes;
         }
 
+        public Trein()
+        {
+
+        }
+
         public void passagiersDoorgeven()
         {
             //hier de values doorgeven van het scherm

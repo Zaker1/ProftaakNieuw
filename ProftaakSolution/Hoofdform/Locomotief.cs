@@ -21,8 +21,8 @@ namespace Hoofdform
         public void CabineToevoegen(string naam, bool passagiers_plekken)
         {
             bool connection = DatabaseCONN.getConnectieString();
-            DatabaseCONN.CONN.Open();
-            cmd = DatabaseCONN.CONN.CreateCommand();
+            DatabaseCONN.conn.Open();
+            cmd = DatabaseCONN.conn.CreateCommand();
             cmd.CommandText = "INSERT INTO dbo.TreinCabine(naam, passagiers_plekken) VALUES(@param1, @param2)";
 
             cmd.Parameters.AddWithValue("@param1", naam);
@@ -38,7 +38,7 @@ namespace Hoofdform
                 
             }
 
-            DatabaseCONN.CONN.Close();
+            DatabaseCONN.conn.Close();
         }
     }
 }

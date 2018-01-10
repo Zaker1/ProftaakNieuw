@@ -98,7 +98,7 @@ namespace Hoofdform
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             /*
                 DatabaseCon.CONN.Open();
                 cmd = DatabaseCon.CONN.CreateCommand();
@@ -120,30 +120,21 @@ namespace Hoofdform
                 DatabaseCon.CONN.Close();
             */
 
-            bool connection = DatabaseCONN.getConnectieString();
-            DatabaseCONN.CONN.Open();
-            cmd = DatabaseCONN.CONN.CreateCommand();
-            cmd.CommandText = "Select * from Coupe";
-=======
             Trein trein = new Trein();
             int id = Convert.ToInt32(cmbCoupe.SelectedValue);
             List<int> list = new List<int>();
->>>>>>> 02f72db688caf128387d3513980fa41a4c73574a
+
 
             for (int i = 0; i < Convert.ToInt32(textAantal.Text); i++)
             {
                 list.Add(id);
             }
 
-<<<<<<< HEAD
+
             //ImageConverter.byteArrayToImage()
 
-            cmbCoupe.DataSource = dt;
-            cmbCoupe.DisplayMember = "naam";
-            cmbCoupe.ValueMember = "id";
-=======
-            trein.TreinOntvangen(list);
->>>>>>> 02f72db688caf128387d3513980fa41a4c73574a
+            // trein.TreinOntvangen(list); 
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -206,8 +197,8 @@ namespace Hoofdform
                 speciaal = false;
             }
 
-            Coupe coupe = new Coupe();
-            coupe.CoupeToevoegen(stoelen, dubbeldekker, klasseL, klasseR, naam, pictureCoupe.Image, speciaal);
+            Coupe coupe = new Coupe(stoelen, dubbeldekker, klasseL, klasseR, naam, pictureCoupe.Image, speciaal);
+            coupe.CoupeToevoegen();
             MessageBox.Show("Coupe is toegevoegd");
 
         }
