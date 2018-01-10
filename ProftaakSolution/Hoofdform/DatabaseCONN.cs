@@ -9,20 +9,19 @@ namespace Hoofdform
 {
     public static class DatabaseCONN
     {
-        public static SqlConnection CONN = new SqlConnection();
+        public static SqlConnection conn = new SqlConnection();
 
-        // public static string CONNSTRING = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='C:\Users\Maste\Documents\GitHub\ProftaakNieuw\ProftaakSolution\Hoofdform\DatabaseUSF.mdf';Integrated Security=True";
-        public static string CONNSTRING = @"Server=mssql.fhict.local;Database=dbi392341;User Id=dbi392341;Password=Proftaak123;";
+        public static string ConnString = @"Server=mssql.fhict.local;Database=dbi392341;User Id=dbi392341;Password=Proftaak123;";
 
         /// <summary>
-        /// kijkt of de connstring connectie is
+        /// kijkt of de connstring connected is
         /// </summary>
         /// <returns>boolean of de connectie goed is of niet</returns>
         public static Boolean getConnectieString()
         {
             try
             {
-                CONN.ConnectionString = CONNSTRING;
+                conn.ConnectionString = ConnString;
                 return true;
             }
             catch

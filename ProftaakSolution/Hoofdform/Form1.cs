@@ -12,11 +12,12 @@ using MaterialSkin.Controls;
 using MaterialSkin.Animations;
 using System.Data.SqlClient;
 
+
 namespace Hoofdform
 {
     public partial class Form1 : MaterialForm
     {
-        SqlCommand cmd = new SqlCommand();
+        static string ConnectionString =  @"Server=mssql.fhict.local;Database=dbi392341;User Id = dbi392341; Password=Proftaak123;";
         public Form1()
         {
            InitializeComponent();
@@ -34,7 +35,54 @@ namespace Hoofdform
                 Primary.Yellow600, Accent.Blue400,
                 TextShade.BLACK
             );
+            // query voor naam id ophalen van coupes
+            string query = "SELECT naam, id FROM Coupe";
 
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (SqlCommand cmd = new SqlCommand(query, connection))
+            {
+
+                connection.Open();
+                
+                
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                cmd.ExecuteNonQuery();
+                
+
+                cmbCoupe.DataSource = dt;
+                cmbCoupe.DisplayMember = "naam";
+                cmbCoupe.ValueMember = "id";
+
+                
+            }
+            // query voor naam id ophalen van cabines
+            string query1 = "SELECT naam, id FROM TreinCabine";
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (SqlCommand cmd = new SqlCommand(query1, connection))
+            {
+
+                connection.Open();
+
+
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                cmd.ExecuteNonQuery();
+
+
+                cmbCabine.DataSource = dt;
+                cmbCabine.DisplayMember = "naam";
+                cmbCabine.ValueMember = "id";
+
+                
+            }
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -50,6 +98,7 @@ namespace Hoofdform
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             /*
                 DatabaseCon.CONN.Open();
                 cmd = DatabaseCon.CONN.CreateCommand();
@@ -75,19 +124,26 @@ namespace Hoofdform
             DatabaseCONN.CONN.Open();
             cmd = DatabaseCONN.CONN.CreateCommand();
             cmd.CommandText = "Select * from Coupe";
+=======
+            Trein trein = new Trein();
+            int id = Convert.ToInt32(cmbCoupe.SelectedValue);
+            List<int> list = new List<int>();
+>>>>>>> 02f72db688caf128387d3513980fa41a4c73574a
 
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            for (int i = 0; i < Convert.ToInt32(textAantal.Text); i++)
+            {
+                list.Add(id);
+            }
 
-            cmd.ExecuteNonQuery();
-            DatabaseCONN.CONN.Close();
-
+<<<<<<< HEAD
             //ImageConverter.byteArrayToImage()
 
             cmbCoupe.DataSource = dt;
             cmbCoupe.DisplayMember = "naam";
             cmbCoupe.ValueMember = "id";
+=======
+            trein.TreinOntvangen(list);
+>>>>>>> 02f72db688caf128387d3513980fa41a4c73574a
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -97,7 +153,17 @@ namespace Hoofdform
 
         private void btnCoupeToevoegen_Click(object sender, EventArgs e)
         {
-            int stoelen = Convert.ToInt32(textboxStoelenL.Text) + Convert.ToInt32(textboxStoelenR.Text);
+            int stoelen = 0;
+            try
+            {
+                stoelen = Convert.ToInt32(textboxStoelenL.Text) + Convert.ToInt32(textboxStoelenR.Text);
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Invoer is ongeldig, vul alles in!");
+            }
+            
+            
             bool dubbeldekker;
             if (radioDubbelJa.Checked)
             {
@@ -112,26 +178,37 @@ namespace Hoofdform
             string klasseR;
             if (radio1eL.Checked)
             {
-                klasseL = "1e";
+                klasseL = "1";
             }
             else
             {
-                klasseL = "2e";
+                klasseL = "2";
             }
             
             if (radio1eR.Checked)
             {
-                klasseR = "1e";
+                klasseR = "1";
             }
             else
             {
-                klasseR = "2e";
+                klasseR = "2";
             }
 
             string naam = textboxNaamCoupe.Text;
 
+            bool speciaal;
+            if (checkSpeciaal.Checked)
+            {
+                speciaal = true;
+            }
+            else
+            {
+                speciaal = false;
+            }
+
             Coupe coupe = new Coupe();
-            coupe.CoupeToevoegen(stoelen, dubbeldekker, klasseL, klasseR, naam, pictureCoupe.Image);
+            coupe.CoupeToevoegen(stoelen, dubbeldekker, klasseL, klasseR, naam, pictureCoupe.Image, speciaal);
+            MessageBox.Show("Coupe is toegevoegd");
 
         }
 
@@ -148,7 +225,7 @@ namespace Hoofdform
                 passagier = false;
             }
 
-            Cabine cabine = new Cabine();
+            Locomotief cabine = new Locomotief();
             cabine.CabineToevoegen(naam, passagier);
         }
 
@@ -166,6 +243,18 @@ namespace Hoofdform
             if (open.ShowDialog() == DialogResult.OK)
             {
                 pictureCoupe.Image = new Bitmap(open.FileName);
+            }
+        }
+
+        private void materialToevoegen_Click(object sender, EventArgs e)
+        {
+            // open file dialog   
+            OpenFileDialog open = new OpenFileDialog();
+            // image filters  
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox3.Image = new Bitmap(open.FileName);
             }
         }
     }
