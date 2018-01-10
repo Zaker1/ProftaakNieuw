@@ -32,10 +32,9 @@ namespace Hoofdform
             {
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
-                
+                Error.ErrorWegschrijven(e.ToString());               
             }
 
             DatabaseCONN.conn.Close();

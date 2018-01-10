@@ -33,6 +33,11 @@ namespace Hoofdform
             this.image = img;
         }
 
+        public Coupe(string naam)
+        {
+            this.naam = naam;
+        }
+
 
         public void CoupeToevoegen()
         {
@@ -52,8 +57,54 @@ namespace Hoofdform
                 cmd.Parameters.AddWithValue("@param7", speciaal);
 
                 connection.Open();
-                cmd.ExecuteNonQuery();
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+
+                    Error.ErrorWegschrijven(e.ToString());
+                }
             }
         } 
+
+        public static List<Coupe> CoupeOphalen()
+        {
+            string query = "SELECT * FROM Coupe";
+            List<Coupe> list = new List<Coupe>();
+
+            using (SqlConnection connection = new SqlConnection(DatabaseCONN.ConnString))
+            using (SqlCommand cmd = new SqlCommand(query, connection))
+            {
+
+                connection.Open();
+
+
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    Error.ErrorWegschrijven(e.ToString());
+                }
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    string naam = dt.Rows[0].ToString();
+                    Coupe coupe = new Coupe(naam);
+                    list.Add(coupe);
+                }
+
+            }
+            return list;
+        }
     }
 }

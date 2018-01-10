@@ -34,7 +34,7 @@
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.textNaam = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.textWachtwoord = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.buttonInloggen = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,7 +99,7 @@
             this.textWachtwoord.MaxLength = 32767;
             this.textWachtwoord.MouseState = MaterialSkin.MouseState.HOVER;
             this.textWachtwoord.Name = "textWachtwoord";
-            this.textWachtwoord.PasswordChar = '\0';
+            this.textWachtwoord.PasswordChar = '•';
             this.textWachtwoord.SelectedText = "";
             this.textWachtwoord.SelectionLength = 0;
             this.textWachtwoord.SelectionStart = 0;
@@ -108,27 +108,28 @@
             this.textWachtwoord.TabStop = false;
             this.textWachtwoord.UseSystemPasswordChar = false;
             // 
-            // materialRaisedButton1
+            // buttonInloggen
             // 
-            this.materialRaisedButton1.AutoSize = true;
-            this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(138, 282);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(88, 36);
-            this.materialRaisedButton1.TabIndex = 6;
-            this.materialRaisedButton1.Text = "Inloggen";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.buttonInloggen.AutoSize = true;
+            this.buttonInloggen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonInloggen.Depth = 0;
+            this.buttonInloggen.Icon = null;
+            this.buttonInloggen.Location = new System.Drawing.Point(138, 282);
+            this.buttonInloggen.MouseState = MaterialSkin.MouseState.HOVER;
+            this.buttonInloggen.Name = "buttonInloggen";
+            this.buttonInloggen.Primary = true;
+            this.buttonInloggen.Size = new System.Drawing.Size(88, 36);
+            this.buttonInloggen.TabIndex = 6;
+            this.buttonInloggen.Text = "Inloggen";
+            this.buttonInloggen.UseVisualStyleBackColor = true;
+            this.buttonInloggen.Click += new System.EventHandler(this.buttonInloggen_Click);
             // 
             // InlogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(502, 340);
-            this.Controls.Add(this.materialRaisedButton1);
+            this.Controls.Add(this.buttonInloggen);
             this.Controls.Add(this.textWachtwoord);
             this.Controls.Add(this.textNaam);
             this.Controls.Add(this.materialLabel3);
@@ -149,6 +150,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialSingleLineTextField textNaam;
         private MaterialSkin.Controls.MaterialSingleLineTextField textWachtwoord;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialRaisedButton buttonInloggen;
     }
 }
