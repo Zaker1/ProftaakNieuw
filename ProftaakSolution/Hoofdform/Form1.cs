@@ -74,7 +74,7 @@ namespace Hoofdform
             bool connection = DatabaseCONN.getConnectieString();
             DatabaseCONN.CONN.Open();
             cmd = DatabaseCONN.CONN.CreateCommand();
-            cmd.CommandText = "Select * from Perron";
+            cmd.CommandText = "Select * from Coupe";
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -82,6 +82,8 @@ namespace Hoofdform
 
             cmd.ExecuteNonQuery();
             DatabaseCONN.CONN.Close();
+
+            //ImageConverter.byteArrayToImage()
 
             cmbCoupe.DataSource = dt;
             cmbCoupe.DisplayMember = "naam";
