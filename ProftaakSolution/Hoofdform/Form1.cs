@@ -18,7 +18,7 @@ namespace Hoofdform
     public partial class Form1 : MaterialForm
     {
         DataTable dt = new DataTable();
-
+        int counterTotaalCoupe;
         List<Coupe> coupeLijst = new List<Coupe>();
 
         static string ConnectionString = @"Server=mssql.fhict.local;Database=dbi392341;User Id = dbi392341; Password=Proftaak123;";
@@ -231,7 +231,7 @@ namespace Hoofdform
 
         private void btnAddCoupeTrein_Click(object sender, EventArgs e)
         {
-            int counterTotaalCoupe = 0;
+            
             for (int i = 0; i < Convert.ToInt32(textAantal.Text); i++)
             {
                 counterTotaalCoupe++;
