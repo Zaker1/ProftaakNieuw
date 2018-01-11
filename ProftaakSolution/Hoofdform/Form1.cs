@@ -47,7 +47,7 @@ namespace Hoofdform
         private void fillCombos()
         {
             // query voor naam id ophalen van coupes
-            string query = "SELECT * FROM Coupe";
+            /* string query = "SELECT naam, id FROM Coupe";
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             using (SqlCommand cmd = new SqlCommand(query, connection))
@@ -61,15 +61,30 @@ namespace Hoofdform
 
                 da.Fill(dt);
 
-                cmd.ExecuteNonQuery();
 
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    Error.ErrorWegschrijven(e.ToString());
+                }
+                
 
                 cmbCoupe.DataSource = dt;
                 cmbCoupe.DisplayMember = "naam";
                 cmbCoupe.ValueMember = "id";
 
+                
+            } */
 
-            }
+            List<Coupe> list = Coupe.CoupeOphalen();
+
+            foreach (Coupe coupe in list)
+            {
+                cmbCoupe.Items.Add(coupe.ToString());
+            } 
             // query voor naam id ophalen van cabines
             string query1 = "SELECT naam, id FROM TreinCabine";
 
@@ -85,7 +100,15 @@ namespace Hoofdform
                 
                 da.Fill(dt);
 
-                cmd.ExecuteNonQuery();
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    Error.ErrorWegschrijven(e.ToString());
+                }
 
 
                 cmbCabine.DataSource = dt;
@@ -277,8 +300,18 @@ namespace Hoofdform
 
                 coupeLijst.Add(Coupe);
             }
+        }
 
-           
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing) //if closed by user
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnAddCoupeTrein_Click(object sender, EventArgs e)
+        {
 
         }
     }
