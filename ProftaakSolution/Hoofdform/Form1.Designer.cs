@@ -101,7 +101,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureCoupe)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+           
             ((System.ComponentModel.ISupportInitialize)(this.pictureCoupeHoofd)).BeginInit();
             this.SuspendLayout();
             // 
@@ -153,7 +153,7 @@
             this.btnAddCoupeTrein.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnAddCoupeTrein.TabIndex = 52;
             this.btnAddCoupeTrein.TabStop = false;
-            this.btnAddCoupeTrein.Click += new System.EventHandler(this.btnAddCoupeTrein_Click);
+           
             // 
             // materialLabel8
             // 
@@ -241,7 +241,7 @@
             this.buttonStelSamen.TabIndex = 46;
             this.buttonStelSamen.Text = "Stel samen";
             this.buttonStelSamen.UseVisualStyleBackColor = true;
-            this.buttonStelSamen.Click += new System.EventHandler(this.materialRaisedButton1_Click);
+           
             // 
             // materialLabel6
             // 
@@ -264,7 +264,7 @@
             this.cmbCabine.Name = "cmbCabine";
             this.cmbCabine.Size = new System.Drawing.Size(121, 21);
             this.cmbCabine.TabIndex = 42;
-            this.cmbCabine.SelectedIndexChanged += new System.EventHandler(this.cmbCabine_SelectedIndexChanged);
+           
             // 
             // materialLabel2
             // 
@@ -315,7 +315,7 @@
             this.cmbCoupe.Name = "cmbCoupe";
             this.cmbCoupe.Size = new System.Drawing.Size(121, 21);
             this.cmbCoupe.TabIndex = 43;
-            this.cmbCoupe.SelectedIndexChanged += new System.EventHandler(this.cmbCoupe_SelectedIndexChanged);
+  
             // 
             // materialLabel4
             // 
@@ -397,7 +397,7 @@
             this.materialRaisedButton2.TabIndex = 10;
             this.materialRaisedButton2.Text = "Uploaden";
             this.materialRaisedButton2.UseVisualStyleBackColor = false;
-            this.materialRaisedButton2.Click += new System.EventHandler(this.materialRaisedButton2_Click);
+            
             // 
             // materialLabel19
             // 
@@ -461,7 +461,7 @@
             this.btnCoupeToevoegen.TabIndex = 7;
             this.btnCoupeToevoegen.Text = "Toevoegen";
             this.btnCoupeToevoegen.UseVisualStyleBackColor = false;
-            this.btnCoupeToevoegen.Click += new System.EventHandler(this.btnCoupeToevoegen_Click);
+            
             // 
             // groupBox2
             // 
@@ -575,7 +575,7 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Links";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+         
             // 
             // panelKlasseL
             // 
@@ -720,7 +720,7 @@
             this.pictureCoupe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureCoupe.TabIndex = 0;
             this.pictureCoupe.TabStop = false;
-            this.pictureCoupe.Click += new System.EventHandler(this.pictureBox2_Click);
+            
             // 
             // tabPage1
             // 
@@ -754,7 +754,7 @@
             this.materialToevoegen.TabIndex = 6;
             this.materialToevoegen.Text = "Toevoegen";
             this.materialToevoegen.UseVisualStyleBackColor = true;
-            this.materialToevoegen.Click += new System.EventHandler(this.materialToevoegen_Click);
+          
             // 
             // materialLabel20
             // 
@@ -803,7 +803,7 @@
             this.materialRaisedButton3.TabIndex = 4;
             this.materialRaisedButton3.Text = "Toevoegen";
             this.materialRaisedButton3.UseVisualStyleBackColor = false;
-            this.materialRaisedButton3.Click += new System.EventHandler(this.materialRaisedButton3_Click);
+            
             // 
             // panel4
             // 
@@ -904,7 +904,7 @@
             this.Controls.Add(this.materialTabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            
             this.materialTabControl1.ResumeLayout(false);
             this.treinSamenstel.ResumeLayout(false);
             this.treinSamenstel.PerformLayout();
@@ -927,7 +927,7 @@
             this.tabPage1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+          
             ((System.ComponentModel.ISupportInitialize)(this.pictureCoupeHoofd)).EndInit();
             this.ResumeLayout(false);
 

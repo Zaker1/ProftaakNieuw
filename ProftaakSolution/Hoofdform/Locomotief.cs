@@ -52,7 +52,7 @@ namespace Hoofdform
             }
             catch (Exception e)
             {
-                Error.ErrorWegschrijven(e.ToString());
+                //Error.ErrorWegschrijven(e.ToString());
             }
 
             DatabaseCONN.conn.Close();
@@ -82,7 +82,7 @@ namespace Hoofdform
                 }
                 catch (Exception e)
                 {
-                    Error.ErrorWegschrijven(e.ToString());
+                    //Error.ErrorWegschrijven(e.ToString());
                 }
 
                 foreach (DataRow dr in dt.Rows)
