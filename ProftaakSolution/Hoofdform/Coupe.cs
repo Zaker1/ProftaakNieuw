@@ -23,6 +23,14 @@ namespace Hoofdform
         private string klasse_rechts;
         private Image image;
 
+        public Image Image
+        {
+            get
+            {
+                return this.image;
+            }
+        }
+
         public Coupe(int stoelen, bool dubbeldekker, string klasseLinks, string klasseRechts, string naam, Image img, bool speciaal)
         {
             this.aantal_stoelen = stoelen;

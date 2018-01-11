@@ -83,14 +83,10 @@ namespace Hoofdform
 
             foreach (Coupe coupe in list)
             {
-                cmbCoupe.Items.Add(coupe.ToString());
-            } 
-            // query voor naam id ophalen van cabines
-            string query1 = "SELECT naam, id FROM TreinCabine";
+                cmbCoupe.Items.Add(coupe);
+            }
 
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            using (SqlCommand cmd = new SqlCommand(query1, connection))
-            {
+            List<Locomotief> list1 = Locomotief.LocomotiefOphalen();
 
                 connection.Open();
 
@@ -175,9 +171,9 @@ namespace Hoofdform
             {
                 stoelen = Convert.ToInt32(textboxStoelenL.Text) + Convert.ToInt32(textboxStoelenR.Text);
             }
-            catch (Exception)
+            catch(Exception c)
             {
-                MessageBox.Show("Invoer is ongeldig, vul alles in!");
+                Error.ErrorWegschrijven(c.ToString());
             }
 
 
@@ -223,10 +219,17 @@ namespace Hoofdform
                 speciaal = false;
             }
 
-            Coupe coupe = new Coupe(stoelen, dubbeldekker, klasseL, klasseR, naam, pictureCoupe.Image, speciaal);
-            coupe.CoupeToevoegen();
-            MessageBox.Show("Coupe is toegevoegd");
-        }
+            try
+            {
+                Coupe coupe = new Coupe(stoelen, dubbeldekker, klasseL, klasseR, naam, pictureCoupe.Image, speciaal);
+                coupe.CoupeToevoegen();
+                MessageBox.Show("Coupe is toegevoegd");
+            }
+            catch (Exception c)
+            {
+                MessageBox.Show("U bent iets vergeten!");
+                Error.ErrorWegschrijven(c.ToString());
+            }
 
         private void btnCoupeToevoegen_Click(object sender, EventArgs e)
         {
@@ -245,14 +248,10 @@ namespace Hoofdform
             {
                 passagier = false;
             }
+            Image foto = pictureBox3.Image;
 
-            Locomotief loco = new Locomotief(naam, passagier, pictureLoco.Image);
-            loco.CabineToevoegen();
-        }
-
-        private void materialRaisedButton3_Click(object sender, EventArgs e)
-        {
-            locomotiefToevoegen();
+            Locomotief cabine = new Locomotief(naam, passagier, foto);
+            cabine.CabineToevoegen();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -313,6 +312,18 @@ namespace Hoofdform
         private void btnAddCoupeTrein_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbCabine_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Locomotief loco = (Locomotief)cmbCabine.SelectedItem;
+            pictureCabine.Image = loco.Image; 
+        }
+
+        private void cmbCoupe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Coupe coupe = (Coupe)cmbCoupe.SelectedItem;
+            pictureCoupeHoofd.Image = coupe.Image;
         }
     }
 }
