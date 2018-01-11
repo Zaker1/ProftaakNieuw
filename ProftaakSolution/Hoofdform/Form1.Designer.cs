@@ -727,7 +727,7 @@
             this.tabPage1.Controls.Add(this.panel4);
             this.tabPage1.Controls.Add(this.materialLabel17);
             this.tabPage1.Controls.Add(this.materialLabel16);
-            this.tabPage1.Controls.Add(this.pictureBox3);
+           
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -866,13 +866,7 @@
             // 
             // pictureLoco
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.White;
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Location = new System.Drawing.Point(7, 7);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(650, 140);
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
+            
             // 
             // materialTabSelector1
             // 

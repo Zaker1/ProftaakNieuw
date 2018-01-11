@@ -107,7 +107,7 @@ namespace Hoofdform
                 }
                 catch (Exception e)
                 {
-                    Error.ErrorWegschrijven(e.ToString());
+                    //Error.ErrorWegschrijven(e.ToString());
                 }
 
 

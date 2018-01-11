@@ -34,10 +34,6 @@ namespace Hoofdform
             this.naam = naam;
         }
 
-        public Coupe(string naam)
-        {
-            this.naam = naam;
-        }
         public string Naam { get; set; }
         public Image Image { get; set; }
         public bool Speciaal { get; set; }
@@ -45,7 +41,6 @@ namespace Hoofdform
         public int Aantal_stoelen { get; set; }
         public string Klasse_rechts { get; set; }
         public string Klasse_links { get; set; }
-
 
 
         public void CoupeToevoegen()
@@ -66,66 +61,8 @@ namespace Hoofdform
                 cmd.Parameters.AddWithValue("@param7", speciaal);
 
                 connection.Open();
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception e)
-                {
-
-                     //Error .ErrorWegschrijven(e.ToString());
-                }
+                cmd.ExecuteNonQuery();
             }
         } 
-
-        public static List<Coupe> CoupeOphalen()
-        {
-            string query = "SELECT * FROM dbo.Coupe";
-            List<Coupe> list = new List<Coupe>();
-
-            using (SqlConnection connection = new SqlConnection(DatabaseCONN.ConnString))
-            using (SqlCommand cmd = new SqlCommand(query, connection))
-            {
-
-                connection.Open();
-
-
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception e)
-                {
-                    //Error.ErrorWegschrijven(e.ToString());
-                }
-
-                foreach (DataRow dr in dt.Rows)
-                {
-                    string naam = dr["naam"].ToString();
-                    int stoelen = (int)dr["aantal_stoelen"];
-                    string klasseLinks = dr["klasse_links"].ToString();
-                    string klasseRechts = dr["klasse_rechts"].ToString();
-                    bool speciaal = Convert.ToBoolean(dr["speciaal"]);
-                    bool dubbeldekker = Convert.ToBoolean(dr["is_dubbeldekker"]);
-                    byte[] byteImage = (byte[])dr["image"];
-                    Image image = ImageConverter.byteArrayToImage(byteImage);
-
-                    Coupe coupe = new Coupe(stoelen, dubbeldekker, klasseLinks, klasseRechts, naam, image, speciaal);
-                    list.Add(coupe);
-                }
-            }
-            return list;
-        }
-
-        public override string ToString()
-        {
-            return naam;
-        }
     }
 }

@@ -32,12 +32,16 @@ namespace Hoofdform
             this.klasse_rechts = klasseRechts;
             this.image = img;
             this.naam = naam;
+<<<<<<< HEAD
+=======
         }
 
         public Coupe(string naam)
         {
             this.naam = naam;
+>>>>>>> b28d9f899ef66f1fb10233706bf2f2a74c34dd79
         }
+
         public string Naam { get; set; }
         public Image Image { get; set; }
         public bool Speciaal { get; set; }
@@ -45,7 +49,6 @@ namespace Hoofdform
         public int Aantal_stoelen { get; set; }
         public string Klasse_rechts { get; set; }
         public string Klasse_links { get; set; }
-
 
 
         public void CoupeToevoegen()
@@ -73,7 +76,7 @@ namespace Hoofdform
                 catch (Exception e)
                 {
 
-                     //Error .ErrorWegschrijven(e.ToString());
+                    Error.ErrorWegschrijven(e.ToString());
                 }
             }
         } 
@@ -102,7 +105,7 @@ namespace Hoofdform
                 }
                 catch (Exception e)
                 {
-                    //Error.ErrorWegschrijven(e.ToString());
+                    Error.ErrorWegschrijven(e.ToString());
                 }
 
                 foreach (DataRow dr in dt.Rows)
