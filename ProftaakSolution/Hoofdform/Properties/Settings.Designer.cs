@@ -37,8 +37,8 @@ namespace Hoofdform.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\DatabaseUSF.m" +
-            "df;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=mssql.fhict.local;Database=dbi392341;User Id=dbi392341;Password=Proftaak12" +
+            "3")]
         public string DatabaseUSFConnectionString {
             get {
                 return ((string)(this["DatabaseUSFConnectionString"]));

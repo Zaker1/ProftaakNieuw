@@ -17,6 +17,10 @@ namespace Hoofdform
 {
     public partial class Form1 : MaterialForm
     {
+        DataTable dt = new DataTable();
+
+        List<Coupe> coupeLijst = new List<Coupe>();
+
         static string ConnectionString =  @"Server=mssql.fhict.local;Database=dbi392341;User Id = dbi392341; Password=Proftaak123;";
         public Form1()
         {
@@ -35,29 +39,36 @@ namespace Hoofdform
                 Primary.Yellow600, Accent.Blue400,
                 TextShade.BLACK
             );
+
+            fillCombos();
+            
+        }
+
+        private void fillCombos()
+        {
             // query voor naam id ophalen van coupes
-            string query = "SELECT naam, id FROM Coupe";
+            string query = "SELECT * FROM Coupe";
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             using (SqlCommand cmd = new SqlCommand(query, connection))
             {
 
                 connection.Open();
-                
-                
+
+
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
+
                 da.Fill(dt);
 
                 cmd.ExecuteNonQuery();
-                
+
 
                 cmbCoupe.DataSource = dt;
                 cmbCoupe.DisplayMember = "naam";
                 cmbCoupe.ValueMember = "id";
 
-                
+
             }
             // query voor naam id ophalen van cabines
             string query1 = "SELECT naam, id FROM TreinCabine";
@@ -71,7 +82,7 @@ namespace Hoofdform
 
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
+                
                 da.Fill(dt);
 
                 cmd.ExecuteNonQuery();
@@ -81,7 +92,7 @@ namespace Hoofdform
                 cmbCabine.DisplayMember = "naam";
                 cmbCabine.ValueMember = "id";
 
-                
+
             }
         }
 
@@ -120,15 +131,7 @@ namespace Hoofdform
                 DatabaseCon.CONN.Close();
             */
 
-            Trein trein = new Trein();
-            int id = Convert.ToInt32(cmbCoupe.SelectedValue);
-            List<int> list = new List<int>();
-
-
-            for (int i = 0; i < Convert.ToInt32(textAantal.Text); i++)
-            {
-                list.Add(id);
-            }
+            
 
 
             //ImageConverter.byteArrayToImage()
@@ -142,19 +145,19 @@ namespace Hoofdform
                                                                         
         }
 
-        private void btnCoupeToevoegen_Click(object sender, EventArgs e)
+        private void coupeToevoegen()
         {
             int stoelen = 0;
             try
             {
                 stoelen = Convert.ToInt32(textboxStoelenL.Text) + Convert.ToInt32(textboxStoelenR.Text);
             }
-            catch(Exception)
+            catch (Exception)
             {
                 MessageBox.Show("Invoer is ongeldig, vul alles in!");
             }
-            
-            
+
+
             bool dubbeldekker;
             if (radioDubbelJa.Checked)
             {
@@ -175,7 +178,7 @@ namespace Hoofdform
             {
                 klasseL = "2";
             }
-            
+
             if (radio1eR.Checked)
             {
                 klasseR = "1";
@@ -200,10 +203,14 @@ namespace Hoofdform
             Coupe coupe = new Coupe(stoelen, dubbeldekker, klasseL, klasseR, naam, pictureCoupe.Image, speciaal);
             coupe.CoupeToevoegen();
             MessageBox.Show("Coupe is toegevoegd");
-
         }
 
-        private void materialRaisedButton3_Click(object sender, EventArgs e)
+        private void btnCoupeToevoegen_Click(object sender, EventArgs e)
+        {
+            coupeToevoegen();
+        }
+
+        private void locomotiefToevoegen()
         {
             string naam = textboxCabineNaam.Text;
             bool passagier;
@@ -216,8 +223,13 @@ namespace Hoofdform
                 passagier = false;
             }
 
-            Locomotief cabine = new Locomotief();
-            cabine.CabineToevoegen(naam, passagier);
+            Locomotief loco = new Locomotief(naam, passagier, pictureLoco.Image);
+            loco.CabineToevoegen();
+        }
+
+        private void materialRaisedButton3_Click(object sender, EventArgs e)
+        {
+            locomotiefToevoegen();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -245,8 +257,29 @@ namespace Hoofdform
             open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
             if (open.ShowDialog() == DialogResult.OK)
             {
-                pictureBox3.Image = new Bitmap(open.FileName);
+                pictureLoco.Image = new Bitmap(open.FileName);
             }
+        }
+
+        private void btnAddCoupe_Click(object sender, EventArgs e)
+        {
+           // Coupe coupe = (Coupe) cmbCoupe.SelectedItem;
+           
+            for (int i = 0; i < Convert.ToInt32(textAantal.Text); i++)
+            {
+                int id = (int)cmbCoupe.SelectedValue;
+
+                DataRow foundRow = dt.AsEnumerable().FirstOrDefault(r => r.Field<int>("id") == id);
+
+                byte[] byteImage = (byte[])foundRow["image"];
+
+                Coupe Coupe = new Coupe(Convert.ToInt32(foundRow["aantal_stoelen"]), Convert.ToBoolean(foundRow["is_dubbeldekker"]), foundRow["klasse_links"].ToString(),foundRow["klasse_rechts"].ToString(),foundRow["naam"].ToString(),ImageConverter.byteArrayToImage(byteImage),Convert.ToBoolean(foundRow["speciaal"]));
+
+                coupeLijst.Add(Coupe);
+            }
+
+           
+
         }
     }
 }
