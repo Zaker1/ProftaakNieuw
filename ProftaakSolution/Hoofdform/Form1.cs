@@ -35,76 +35,19 @@ namespace Hoofdform
                 Primary.Yellow600, Accent.Blue400,
                 TextShade.BLACK
             );
-            // query voor naam id ophalen van coupes
-            /* string query = "SELECT naam, id FROM Coupe";
-
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            using (SqlCommand cmd = new SqlCommand(query, connection))
-            {
-
-                connection.Open();
-                
-                
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception e)
-                {
-                    Error.ErrorWegschrijven(e.ToString());
-                }
-                
-
-                cmbCoupe.DataSource = dt;
-                cmbCoupe.DisplayMember = "naam";
-                cmbCoupe.ValueMember = "id";
-
-                
-            } */
 
             List<Coupe> list = Coupe.CoupeOphalen();
 
             foreach (Coupe coupe in list)
             {
-                cmbCoupe.Items.Add(coupe.ToString());
-            } 
-            // query voor naam id ophalen van cabines
-            string query1 = "SELECT naam, id FROM TreinCabine";
+                cmbCoupe.Items.Add(coupe);
+            }
 
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            using (SqlCommand cmd = new SqlCommand(query1, connection))
+            List<Locomotief> list1 = Locomotief.LocomotiefOphalen();
+
+            foreach (Locomotief loco in list1)
             {
-
-                connection.Open();
-
-
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception e)
-                {
-                    Error.ErrorWegschrijven(e.ToString());
-                }
-
-
-                cmbCabine.DataSource = dt;
-                cmbCabine.DisplayMember = "naam";
-                cmbCabine.ValueMember = "id";
-
-                
+                cmbCabine.Items.Add(loco);
             }
         }
 
@@ -122,27 +65,6 @@ namespace Hoofdform
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
 
-            /*
-                DatabaseCon.CONN.Open();
-                cmd = DatabaseCon.CONN.CreateCommand();
-                cmd.CommandText = "SELECT * FROM dbo.Boek WHERE isbn_nummer ='" + data.isbn_nummer + "'";
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
-                {
-                    data.titel = (dr["titel"].ToString());
-                    data.auteur = (dr["auteur"].ToString());
-                    data.beschrijving = (dr["beschrijving"].ToString());
-                    data.genre = (dr["genre"].ToString());
-                    data.prijs = (Convert.ToDecimal(dr["prijs"].ToString()));
-                    data.uitgeversector_naam = (dr["uitgeversector_naam"].ToString());
-                }
-                cmd.ExecuteNonQuery();
-                DatabaseCon.CONN.Close();
-            */
-
             Trein trein = new Trein();
             int id = Convert.ToInt32(cmbCoupe.SelectedValue);
             List<int> list = new List<int>();
@@ -152,12 +74,6 @@ namespace Hoofdform
             {
                 list.Add(id);
             }
-
-
-            //ImageConverter.byteArrayToImage()
-
-            // trein.TreinOntvangen(list); 
-
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -172,9 +88,9 @@ namespace Hoofdform
             {
                 stoelen = Convert.ToInt32(textboxStoelenL.Text) + Convert.ToInt32(textboxStoelenR.Text);
             }
-            catch(Exception)
+            catch(Exception c)
             {
-                MessageBox.Show("Invoer is ongeldig, vul alles in!");
+                Error.ErrorWegschrijven(c.ToString());
             }
             
             
@@ -220,9 +136,17 @@ namespace Hoofdform
                 speciaal = false;
             }
 
-            Coupe coupe = new Coupe(stoelen, dubbeldekker, klasseL, klasseR, naam, pictureCoupe.Image, speciaal);
-            coupe.CoupeToevoegen();
-            MessageBox.Show("Coupe is toegevoegd");
+            try
+            {
+                Coupe coupe = new Coupe(stoelen, dubbeldekker, klasseL, klasseR, naam, pictureCoupe.Image, speciaal);
+                coupe.CoupeToevoegen();
+                MessageBox.Show("Coupe is toegevoegd");
+            }
+            catch (Exception c)
+            {
+                MessageBox.Show("U bent iets vergeten!");
+                Error.ErrorWegschrijven(c.ToString());
+            }
 
         }
 
@@ -238,9 +162,10 @@ namespace Hoofdform
             {
                 passagier = false;
             }
+            Image foto = pictureBox3.Image;
 
-            Locomotief cabine = new Locomotief();
-            cabine.CabineToevoegen(naam, passagier);
+            Locomotief cabine = new Locomotief(naam, passagier, foto);
+            cabine.CabineToevoegen();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -283,6 +208,18 @@ namespace Hoofdform
         private void btnAddCoupeTrein_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbCabine_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Locomotief loco = (Locomotief)cmbCabine.SelectedItem;
+            pictureCabine.Image = loco.Image; 
+        }
+
+        private void cmbCoupe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Coupe coupe = (Coupe)cmbCoupe.SelectedItem;
+            pictureCoupeHoofd.Image = coupe.Image;
         }
     }
 }
