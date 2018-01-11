@@ -33,13 +33,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.treinSamenstel = new System.Windows.Forms.TabPage();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btnAddCoupeTrein = new System.Windows.Forms.PictureBox();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             this.textAantal = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialStelSamen = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.buttonStelSamen = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.cmbCabine = new System.Windows.Forms.ComboBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -89,7 +89,7 @@
             this.arduinoPoort = new System.IO.Ports.SerialPort(this.components);
             this.materialTabControl1.SuspendLayout();
             this.treinSamenstel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddCoupeTrein)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.coupeToevoeg.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -119,13 +119,13 @@
             // treinSamenstel
             // 
             this.treinSamenstel.BackColor = System.Drawing.Color.White;
-            this.treinSamenstel.Controls.Add(this.pictureBox4);
+            this.treinSamenstel.Controls.Add(this.btnAddCoupeTrein);
             this.treinSamenstel.Controls.Add(this.materialLabel8);
             this.treinSamenstel.Controls.Add(this.pictureBox1);
             this.treinSamenstel.Controls.Add(this.materialLabel3);
             this.treinSamenstel.Controls.Add(this.materialLabel7);
             this.treinSamenstel.Controls.Add(this.textAantal);
-            this.treinSamenstel.Controls.Add(this.materialStelSamen);
+            this.treinSamenstel.Controls.Add(this.buttonStelSamen);
             this.treinSamenstel.Controls.Add(this.materialLabel6);
             this.treinSamenstel.Controls.Add(this.cmbCabine);
             this.treinSamenstel.Controls.Add(this.materialLabel2);
@@ -135,21 +135,22 @@
             this.treinSamenstel.Controls.Add(this.materialLabel4);
             this.treinSamenstel.Location = new System.Drawing.Point(4, 22);
             this.treinSamenstel.Name = "treinSamenstel";
-            this.treinSamenstel.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.treinSamenstel.Padding = new System.Windows.Forms.Padding(3);
             this.treinSamenstel.Size = new System.Drawing.Size(664, 364);
             this.treinSamenstel.TabIndex = 0;
             this.treinSamenstel.Text = "Trein samenstellen";
             // 
-            // pictureBox4
+            // btnAddCoupeTrein
             // 
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(234, 234);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(23, 21);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 52;
-            this.pictureBox4.TabStop = false;
+            this.btnAddCoupeTrein.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btnAddCoupeTrein.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCoupeTrein.Image")));
+            this.btnAddCoupeTrein.Location = new System.Drawing.Point(234, 232);
+            this.btnAddCoupeTrein.Name = "btnAddCoupeTrein";
+            this.btnAddCoupeTrein.Size = new System.Drawing.Size(23, 21);
+            this.btnAddCoupeTrein.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAddCoupeTrein.TabIndex = 52;
+            this.btnAddCoupeTrein.TabStop = false;
+            this.btnAddCoupeTrein.Click += new System.EventHandler(this.btnAddCoupeTrein_Click);
             // 
             // materialLabel8
             // 
@@ -222,22 +223,22 @@
             this.textAantal.TabStop = false;
             this.textAantal.UseSystemPasswordChar = false;
             // 
-            // materialStelSamen
+            // buttonStelSamen
             // 
-            this.materialStelSamen.AutoSize = true;
-            this.materialStelSamen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialStelSamen.Depth = 0;
-            this.materialStelSamen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialStelSamen.Icon = null;
-            this.materialStelSamen.Location = new System.Drawing.Point(117, 311);
-            this.materialStelSamen.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialStelSamen.Name = "materialStelSamen";
-            this.materialStelSamen.Primary = true;
-            this.materialStelSamen.Size = new System.Drawing.Size(103, 36);
-            this.materialStelSamen.TabIndex = 46;
-            this.materialStelSamen.Text = "Stel samen";
-            this.materialStelSamen.UseVisualStyleBackColor = true;
-            this.materialStelSamen.Click += new System.EventHandler(this.materialRaisedButton1_Click);
+            this.buttonStelSamen.AutoSize = true;
+            this.buttonStelSamen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonStelSamen.Depth = 0;
+            this.buttonStelSamen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonStelSamen.Icon = null;
+            this.buttonStelSamen.Location = new System.Drawing.Point(117, 311);
+            this.buttonStelSamen.MouseState = MaterialSkin.MouseState.HOVER;
+            this.buttonStelSamen.Name = "buttonStelSamen";
+            this.buttonStelSamen.Primary = true;
+            this.buttonStelSamen.Size = new System.Drawing.Size(103, 36);
+            this.buttonStelSamen.TabIndex = 46;
+            this.buttonStelSamen.Text = "Stel samen";
+            this.buttonStelSamen.UseVisualStyleBackColor = true;
+            this.buttonStelSamen.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
             // materialLabel6
             // 
@@ -342,7 +343,7 @@
             this.coupeToevoeg.Controls.Add(this.pictureCoupe);
             this.coupeToevoeg.Location = new System.Drawing.Point(4, 22);
             this.coupeToevoeg.Name = "coupeToevoeg";
-            this.coupeToevoeg.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.coupeToevoeg.Padding = new System.Windows.Forms.Padding(3);
             this.coupeToevoeg.Size = new System.Drawing.Size(664, 364);
             this.coupeToevoeg.TabIndex = 1;
             this.coupeToevoeg.Text = "Coupe toevoegen";
@@ -729,7 +730,7 @@
             this.tabPage1.Controls.Add(this.pictureBox3);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(664, 364);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Cabine toevoegen";
@@ -897,7 +898,7 @@
             this.materialTabControl1.ResumeLayout(false);
             this.treinSamenstel.ResumeLayout(false);
             this.treinSamenstel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddCoupeTrein)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.coupeToevoeg.ResumeLayout(false);
             this.coupeToevoeg.PerformLayout();
@@ -933,7 +934,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
         private MaterialSkin.Controls.MaterialSingleLineTextField textAantal;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
-        private MaterialSkin.Controls.MaterialRaisedButton materialStelSamen;
+        private MaterialSkin.Controls.MaterialRaisedButton buttonStelSamen;
         private System.Windows.Forms.ComboBox cmbCabine;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
@@ -971,7 +972,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private MaterialSkin.Controls.MaterialSingleLineTextField textboxNaamCoupe;
         private MaterialSkin.Controls.MaterialLabel materialLabel18;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox btnAddCoupeTrein;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
         private MaterialSkin.Controls.MaterialLabel materialLabel19;
         private MaterialSkin.Controls.MaterialRaisedButton materialToevoegen;

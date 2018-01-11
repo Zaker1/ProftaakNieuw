@@ -31,6 +31,7 @@ namespace Hoofdform
             this.klasseLinks = klasseLinks;
             this.klasseRechts = klasseRechts;
             this.image = img;
+            this.naam = naam;
         }
 
         public Coupe(string naam)
@@ -71,7 +72,7 @@ namespace Hoofdform
 
         public static List<Coupe> CoupeOphalen()
         {
-            string query = "SELECT * FROM Coupe";
+            string query = "SELECT * FROM dbo.Coupe";
             List<Coupe> list = new List<Coupe>();
 
             using (SqlConnection connection = new SqlConnection(DatabaseCONN.ConnString))
@@ -98,13 +99,25 @@ namespace Hoofdform
 
                 foreach (DataRow dr in dt.Rows)
                 {
-                    string naam = dt.Rows[0].ToString();
-                    Coupe coupe = new Coupe(naam);
+                    string naam = dr["naam"].ToString();
+                    int stoelen = (int)dr["aantal_stoelen"];
+                    string klasseLinks = dr["klasse_links"].ToString();
+                    string klasseRechts = dr["klasse_rechts"].ToString();
+                    bool speciaal = Convert.ToBoolean(dr["speciaal"]);
+                    bool dubbeldekker = Convert.ToBoolean(dr["is_dubbeldekker"]);
+                    byte[] byteImage = (byte[])dr["image"];
+                    Image image = ImageConverter.byteArrayToImage(byteImage);
+
+                    Coupe coupe = new Coupe(stoelen, dubbeldekker, klasseLinks, klasseRechts, naam, image, speciaal);
                     list.Add(coupe);
                 }
-
             }
             return list;
+        }
+
+        public override string ToString()
+        {
+            return naam;
         }
     }
 }

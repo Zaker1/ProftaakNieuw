@@ -279,5 +279,10 @@ namespace Hoofdform
                 Application.Exit();
             }
         }
+
+        private void btnAddCoupeTrein_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
