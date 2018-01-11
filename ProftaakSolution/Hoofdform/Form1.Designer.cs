@@ -84,7 +84,7 @@
             this.radioPassagierJa = new System.Windows.Forms.RadioButton();
             this.materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureLoco = new System.Windows.Forms.PictureBox();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.arduinoPoort = new System.IO.Ports.SerialPort(this.components);
             this.pictureCoupeHoofd = new System.Windows.Forms.PictureBox();
@@ -869,7 +869,7 @@
             this.materialLabel16.TabIndex = 1;
             this.materialLabel16.Text = "Naam:";
             // 
-            // pictureBox3
+            // pictureLoco
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -986,7 +986,7 @@
         private System.Windows.Forms.RadioButton radioPassagierJa;
         private MaterialSkin.Controls.MaterialLabel materialLabel17;
         private MaterialSkin.Controls.MaterialLabel materialLabel16;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureLoco;
         private MaterialSkin.Controls.MaterialSingleLineTextField textboxNaamCoupe;
         private MaterialSkin.Controls.MaterialLabel materialLabel18;
         private System.Windows.Forms.PictureBox btnAddCoupeTrein;
