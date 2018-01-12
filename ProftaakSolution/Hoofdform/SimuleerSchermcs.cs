@@ -129,13 +129,18 @@ namespace Hoofdform
             foreach (NumericUpDown down in this.Controls.OfType<NumericUpDown>())
             {
                 int getal = (int)down.Value;
-                string tijdelijkDeel = "0" + getal.ToString();
-                string deel = "";
+                string tijdelijkDeel = getal.ToString();
+                
 
-                if (tijdelijkDeel.Length == 4)
+                if (tijdelijkDeel.Length == 1)
                 {
-                    deel = tijdelijkDeel.Remove(0, 1);
-                    opsturenTweede = opsturenTweede + deel + ",";
+                    tijdelijkDeel = "00" + getal.ToString();
+                    opsturenTweede = opsturenTweede + tijdelijkDeel + ",";
+                }
+                else if (tijdelijkDeel.Length == 2)
+                {
+                    tijdelijkDeel = "0" + getal.ToString();
+                    opsturenTweede = opsturenTweede + tijdelijkDeel + ",";
                 }
                 else
                 {
@@ -149,12 +154,12 @@ namespace Hoofdform
         {
             String1Aanmaken();
             String2Aanmaken();
-
+            
             // MAANDAG FIXEN WE DIT
             /* SerialPort arduinoPort = new SerialPort();
             arduinoPort.Open();
             arduinoPort.WriteLine(opsturenEerste);
-            arduinoPort.WriteLine(opsturenTweede);
+            arduinoPort.WriteLine(opsturenTweede.TrimEnd(','));
             arduinoPort.Close(); */
         }
     }
