@@ -213,9 +213,9 @@
             this.labelHandiCoupe.Location = new System.Drawing.Point(347, 262);
             this.labelHandiCoupe.MouseState = MaterialSkin.MouseState.HOVER;
             this.labelHandiCoupe.Name = "labelHandiCoupe";
-            this.labelHandiCoupe.Size = new System.Drawing.Size(205, 19);
+            this.labelHandiCoupe.Size = new System.Drawing.Size(172, 19);
             this.labelHandiCoupe.TabIndex = 50;
-            this.labelHandiCoupe.Text = "Aantal gehandicapte coupe\'s:";
+            this.labelHandiCoupe.Text = "Aantal speciale coupe\'s:";
             // 
             // textAantal
             // 
