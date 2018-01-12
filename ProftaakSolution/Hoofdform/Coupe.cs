@@ -30,6 +30,37 @@ namespace Hoofdform
                 return this.image;
             }
         }
+        public string Klasse_Rechts
+        {
+            get
+            {
+                return this.klasseRechts;
+            }
+        }
+
+        public string Klasse_Links
+        {
+            get
+            {
+                return this.klasseLinks;
+            }
+        }
+
+        public int Aantal_stoelen
+        {
+            get
+            {
+                return this.aantalStoelen;
+            }
+        }
+
+        public bool Speciaal
+        {
+            get
+            {
+                return this.speciaal;
+            }
+        }
 
         public Coupe(int stoelen, bool dubbeldekker, string klasseLinks, string klasseRechts, string naam, Image img, bool speciaal)
         {

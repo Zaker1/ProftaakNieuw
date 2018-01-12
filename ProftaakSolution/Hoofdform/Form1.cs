@@ -21,7 +21,7 @@ namespace Hoofdform
         int counterTotaalCoupe;
         List<Coupe> coupeLijst = new List<Coupe>();
 
-        static string ConnectionString = @"Server=mssql.fhict.local;Database=dbi392341;User Id = dbi392341; Password=Proftaak123;";
+        // static string ConnectionString = @"Server=mssql.fhict.local;Database=dbi392341;User Id = dbi392341; Password=Proftaak123;";
         public Form1()
         {
             InitializeComponent();
@@ -74,7 +74,9 @@ namespace Hoofdform
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
+            SimuleerSchermcs simuleer = new SimuleerSchermcs(coupeLijst, (Locomotief)cmbCabine.SelectedItem);
 
+            simuleer.Show();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
