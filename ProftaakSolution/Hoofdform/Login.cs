@@ -38,7 +38,7 @@ namespace Hoofdform
                 }
                 catch (ArgumentException e)
                 {
-                    //Error.ErrorWegschrijven(e.ToString());
+                    Error.ErrorWegschrijven(e.ToString());
                 }
             }
             return gelukt;

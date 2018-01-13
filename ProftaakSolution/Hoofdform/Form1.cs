@@ -19,6 +19,8 @@ namespace Hoofdform
     {
         DataTable dt = new DataTable();
 
+        
+
         List<Coupe> coupeLijst = new List<Coupe>();
 
         static string ConnectionString = @"Server=mssql.fhict.local;Database=dbi392341;User Id = dbi392341; Password=Proftaak123;";
@@ -91,6 +93,7 @@ namespace Hoofdform
             }
             catch (Exception c)
             {
+                
                 Error.ErrorWegschrijven(c.ToString());
             }
 
