@@ -18,12 +18,13 @@ namespace Hoofdform
     public partial class Form1 : MaterialForm
     {
         DataTable dt = new DataTable();
-
-        
-
+        int counterTotaalCoupe;
+        int counterEerste;
+        int counterTweede;
+        int counterSpeciaal;
         List<Coupe> coupeLijst = new List<Coupe>();
 
-        static string ConnectionString = @"Server=mssql.fhict.local;Database=dbi392341;User Id = dbi392341; Password=Proftaak123;";
+        // static string ConnectionString = @"Server=mssql.fhict.local;Database=dbi392341;User Id = dbi392341; Password=Proftaak123;";
         public Form1()
         {
             InitializeComponent();
@@ -76,7 +77,9 @@ namespace Hoofdform
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
+            SimuleerSchermcs simuleer = new SimuleerSchermcs(coupeLijst, (Locomotief)cmbCabine.SelectedItem);
 
+            simuleer.Show();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -234,7 +237,7 @@ namespace Hoofdform
 
         private void btnAddCoupeTrein_Click(object sender, EventArgs e)
         {
-            int counterTotaalCoupe = 0;
+            
             for (int i = 0; i < Convert.ToInt32(textAantal.Text); i++)
             {
                 counterTotaalCoupe++;
@@ -248,9 +251,28 @@ namespace Hoofdform
                 {
                     Error.ErrorWegschrijven(c.ToString());
                 }
+
+                foreach (Coupe coup in coupeLijst)
+                {
+                    if(coup.Klasse_Links == "1")
+                    {
+                        counterEerste++;
+                    }
+                    else
+                    {
+                        counterTweede++;
+                    }
+                    if (coup.Speciaal)
+                    {
+                        counterSpeciaal++;
+                    }
+                }
             }
 
             labelTotaalCoupes.Text = String.Format("Totaal aantal coupe's: {0}", counterTotaalCoupe);
+            labelEersteklasse.Text = String.Format("Aantal eerste klasse: {0}", counterEerste);
+            labelTweedeklasse.Text = String.Format("Aantal tweede klasse: {0}", counterTweede);
+            labelHandiCoupe.Text = String.Format("Aantal speciale coupe's: {0}", counterSpeciaal);
 
         }
 
