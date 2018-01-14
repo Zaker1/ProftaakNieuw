@@ -23,9 +23,7 @@ namespace Hoofdform
         int counterTweede;
         int counterSpeciaal;
         List<Coupe> coupeLijst = new List<Coupe>();
-        string test;
 
-        // static string ConnectionString = @"Server=mssql.fhict.local;Database=dbi392341;User Id = dbi392341; Password=Proftaak123;";
         public Form1()
         {
             InitializeComponent();
@@ -148,6 +146,7 @@ namespace Hoofdform
             {
                 Coupe coupe = new Coupe(stoelen, dubbeldekker, klasseL, klasseR, naam, pictureCoupe.Image, speciaal);
                 coupe.CoupeToevoegen();
+                fillCombos();
                 MessageBox.Show("Coupe is toegevoegd");
             }
             catch (Exception c)
@@ -165,20 +164,30 @@ namespace Hoofdform
 
         private void locomotiefToevoegen()
         {
-            string naam = textboxCabineNaam.Text;
-            bool passagier;
-            if (radioPassagierJa.Checked)
+            try
             {
-                passagier = true;
-            }
-            else
-            {
-                passagier = false;
-            }
-            Image foto = pictureCoupeHoofd.Image;
+                string naam = textboxCabineNaam.Text;
+                bool passagier;
+                if (radioPassagierJa.Checked)
+                {
+                    passagier = true;
+                }
+                else
+                {
+                    passagier = false;
+                }
+                Image foto = pictureAddCabine.Image;
 
-            Locomotief cabine = new Locomotief(naam, passagier, foto);
-            cabine.CabineToevoegen();
+                Locomotief cabine = new Locomotief(naam, passagier, foto);
+                cabine.CabineToevoegen();
+                fillCombos();
+                MessageBox.Show("Cabine is toegevoegd");
+            }
+            catch (Exception c)
+            {
+                MessageBox.Show("U bent iets vergeten!");
+                Error.ErrorWegschrijven(c.ToString());
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -206,26 +215,8 @@ namespace Hoofdform
             open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
             if (open.ShowDialog() == DialogResult.OK)
             {
-                pictureLoco.Image = new Bitmap(open.FileName);
+                pictureAddCabine.Image = new Bitmap(open.FileName);
             }
-        }
-
-        private void btnAddCoupe_Click(object sender, EventArgs e)
-        {
-            // Coupe coupe = (Coupe) cmbCoupe.SelectedItem;
-
-            /* for (int i = 0; i < Convert.ToInt32(textAantal.Text); i++)
-            {
-                int id = (int)cmbCoupe.SelectedValue;
-
-                DataRow foundRow = dt.AsEnumerable().FirstOrDefault(r => r.Field<int>("id") == id);
-
-                byte[] byteImage = (byte[])foundRow["image"];
-
-                Coupe Coupe = new Coupe(Convert.ToInt32(foundRow["aantal_stoelen"]), Convert.ToBoolean(foundRow["is_dubbeldekker"]), foundRow["klasse_links"].ToString(), foundRow["klasse_rechts"].ToString(), foundRow["naam"].ToString(), ImageConverter.byteArrayToImage(byteImage), Convert.ToBoolean(foundRow["speciaal"]));
-
-                coupeLijst.Add(Coupe);
-            } */
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -246,16 +237,8 @@ namespace Hoofdform
                 try
                 {
                     Coupe coupe = (Coupe)cmbCoupe.SelectedItem;
-                    coupeLijst.Add(coupe);
-                }
-                catch (Exception c)
-                {
-                    Error.ErrorWegschrijven(c.ToString());
-                }
 
-                foreach (Coupe coup in coupeLijst)
-                {
-                    if(coup.Klasse_Links == "1")
+                    if (coupe.Klasse_Links == "1")
                     {
                         counterEerste++;
                     }
@@ -263,10 +246,26 @@ namespace Hoofdform
                     {
                         counterTweede++;
                     }
-                    if (coup.Speciaal)
+
+                    if (coupe.Klasse_Rechts == "1")
+                    {
+                        counterEerste++;
+                    }
+                    else
+                    {
+                        counterTweede++;
+                    }
+
+                    if (coupe.Speciaal)
                     {
                         counterSpeciaal++;
                     }
+
+                    coupeLijst.Add(coupe);
+                }
+                catch (Exception c)
+                {
+                    Error.ErrorWegschrijven(c.ToString());
                 }
             }
 
@@ -287,6 +286,11 @@ namespace Hoofdform
         {
             Coupe coupe = (Coupe)cmbCoupe.SelectedItem;
             pictureCoupeHoofd.Image = coupe.Image;
+        }
+
+        private void materialRaisedButton3_Click(object sender, EventArgs e)
+        {
+            locomotiefToevoegen();
         }
     }
 }

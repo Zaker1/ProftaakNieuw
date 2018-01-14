@@ -74,11 +74,6 @@
     <Compile Include="Locomotief.cs" />
     <Compile Include="Coupe.cs" />
     <Compile Include="DatabaseCONN.cs" />
-    <Compile Include="DatabaseUSFDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseUSFDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,17 +109,6 @@
     <EmbeddedResource Include="SimuleerSchermcs.resx">
       <DependentUpon>SimuleerSchermcs.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DatabaseUSFDataSet1.xsc">
-      <DependentUpon>DatabaseUSFDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DatabaseUSFDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DatabaseUSFDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DatabaseUSFDataSet1.xss">
-      <DependentUpon>DatabaseUSFDataSet1.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -150,15 +134,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DatabaseUSF.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DatabaseUSF_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>DatabaseUSF.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
