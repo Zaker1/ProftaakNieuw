@@ -23,6 +23,7 @@ namespace Hoofdform
         int counterTweede;
         int counterSpeciaal;
         List<Coupe> coupeLijst = new List<Coupe>();
+        string test;
 
         // static string ConnectionString = @"Server=mssql.fhict.local;Database=dbi392341;User Id = dbi392341; Password=Proftaak123;";
         public Form1()
