@@ -34,7 +34,7 @@ namespace Hoofdform
         {
             get
             {
-                return this.klasseRechts;
+                return this.klasse_rechts;
             }
         }
 
@@ -42,7 +42,7 @@ namespace Hoofdform
         {
             get
             {
-                return this.klasseLinks;
+                return this.klasse_links;
             }
         }
 
@@ -50,7 +50,7 @@ namespace Hoofdform
         {
             get
             {
-                return this.aantalStoelen;
+                return this.aantal_stoelen;
             }
         }
 
@@ -74,10 +74,10 @@ namespace Hoofdform
         }
 
         public string Naam { get; set; }
-        public Image Image { get; set; }
-        public bool Speciaal { get; set; }
+        //public Image Image { get; set; }
+       // public bool Speciaal { get; set; }
         public bool Is_dubbeldekker { get; set; }
-        public int Aantal_stoelen { get; set; }
+        //public int Aantal_stoelen { get; set; }
         public string Klasse_rechts { get; set; }
         public string Klasse_links { get; set; }
 
