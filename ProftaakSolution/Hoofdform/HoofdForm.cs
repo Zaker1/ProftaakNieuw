@@ -22,14 +22,9 @@ namespace Hoofdform
         List<Coupe> coupeLijst = new List<Coupe>();
         string opsturenEerste;
 
-        SerialPort arduinoPoort = new SerialPort();
-
         public HoofdForm(bool rechten)
         {
             InitializeComponent();
-
-            arduinoPoort.BaudRate = 9600;
-            arduinoPoort.PortName = "COM4";
 
             if (rechten == false)
             {
@@ -111,15 +106,10 @@ namespace Hoofdform
             {
                 try
                 {
-                    SimuleerSchermcs simuleer = new SimuleerSchermcs(coupeLijst, (Locomotief)cmbCabine.SelectedItem, arduinoPoort);
-                    simuleer.Show();
-                    
-
                     String1Aanmaken();
 
-                    arduinoPoort.Open();
-                    arduinoPoort.WriteLine("#" + opsturenEerste + "%");
-                    arduinoPoort.Close(); 
+                    SimuleerSchermcs simuleer = new SimuleerSchermcs(coupeLijst, (Locomotief)cmbCabine.SelectedItem, opsturenEerste);
+                    simuleer.Show();
                 }
                 catch (Exception c)
                 {
