@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +29,6 @@ namespace Hoofdform
         int xPositieButton;
         int yPositieButton;
         
-
         int controlCounter;
 
         string opsturenEerste;
@@ -124,8 +123,7 @@ namespace Hoofdform
         }
 
         private void String2Aanmaken()
-        {
-            
+        {         
             foreach (NumericUpDown down in this.Controls.OfType<NumericUpDown>())
             {
                 int getal = (int)down.Value;
@@ -145,8 +143,7 @@ namespace Hoofdform
                 else
                 {
                     opsturenTweede = opsturenTweede + tijdelijkDeel + ",";
-                }
-                
+                }              
             }
         }
 
@@ -155,12 +152,16 @@ namespace Hoofdform
             String1Aanmaken();
             String2Aanmaken();
             
-            // MAANDAG FIXEN WE DIT
-            /* SerialPort arduinoPort = new SerialPort();
+            
+            SerialPort arduinoPort = new SerialPort();
+
+            arduinoPort.BaudRate = 9600;
+            arduinoPort.PortName = "COM4";
+
             arduinoPort.Open();
-            arduinoPort.WriteLine(opsturenEerste);
-            arduinoPort.WriteLine(opsturenTweede.TrimEnd(','));
-            arduinoPort.Close(); */
+            arduinoPort.WriteLine("#" + opsturenEerste + "%");
+            arduinoPort.WriteLine("#" + opsturenTweede.TrimEnd(',') + "&");
+            arduinoPort.Close();
         }
     }
 }
