@@ -99,8 +99,8 @@ namespace Hoofdform
 
                 MaterialLabel labelKleur = new MaterialLabel
                 {
-                    Location = new Point(xPositieNumeric + 40, yPositieLabels),
-                    Text = String.Format("Kleur {0}:", controlCounter),
+                    Location = new Point(xPositieNumeric + 130, yPositieLabels),
+                    Text = String.Format("Status:"),
                     Tag = controlCounter
                 };
 
@@ -121,7 +121,7 @@ namespace Hoofdform
                 yPositieNumeric += 34;
 
                 this.Height = yPositieButton + 50;
-                this.Width = xPositieNumeric + 200;
+                this.Width = xPositieNumeric + 300;
             }
         }
 
@@ -181,37 +181,49 @@ namespace Hoofdform
 
         public void getMessage()
         {
-            string bericht =  arduinoPoort.ReadLine();
-            
-            if(bericht == "GEMIDDELD")
+            if (!arduinoPoort.IsOpen)
             {
-                berichtCounter++;
+                arduinoPoort.Open();
+                System.Threading.Thread.Sleep(300);
             }
-            if(bericht == "VOL")
-            {
-                berichtCounter++;
-            }
-            if(bericht == "LEEG")
-            {
-                berichtCounter++;
-            }
-            foreach(MaterialLabel kleurlabel in this.Controls.OfType<MaterialLabel>())
-            {
-                if (Convert.ToInt32(kleurlabel.Tag) == berichtCounter)
-                {
-                    kleurlabel.Text = bericht;
 
-                    switch (bericht)
+            if (arduinoPoort.BytesToRead > 0)
+            {
+                char bericht1 = (char)arduinoPoort.BytesToRead;
+                string bericht = "";
+
+                arduinoPoort.Close();
+
+                if (bericht == "GEMIDDELD")
+                {
+                    berichtCounter++;
+                }
+                if (bericht == "VOL")
+                {
+                    berichtCounter++;
+                }
+                if (bericht == "LEEG")
+                {
+                    berichtCounter++;
+                }
+                foreach (MaterialLabel kleurlabel in this.Controls.OfType<MaterialLabel>())
+                {
+                    if (Convert.ToInt32(kleurlabel.Tag) == berichtCounter)
                     {
-                        case "VOL":
-                            kleurlabel.ForeColor = Color.Red;
-                            break;
-                        case "GEMIDDELD":
-                            kleurlabel.ForeColor = Color.Orange;
-                            break;
-                        case "LEEG":
-                            kleurlabel.ForeColor = Color.Green;
-                            break;
+                        kleurlabel.Text = bericht;
+
+                        switch (bericht)
+                        {
+                            case "VOL":
+                                kleurlabel.ForeColor = Color.Red;
+                                break;
+                            case "GEMIDDELD":
+                                kleurlabel.ForeColor = Color.Orange;
+                                break;
+                            case "LEEG":
+                                kleurlabel.ForeColor = Color.Green;
+                                break;
+                        }
                     }
                 }
             }
