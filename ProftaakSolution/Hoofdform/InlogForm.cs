@@ -34,11 +34,21 @@ namespace Hoofdform
 
         private void buttonInloggen_Click(object sender, EventArgs e)
         {
-            bool inloggen = Login.Inloggen(textNaam.Text, textWachtwoord.Text);
-            bool rechten = Login.Rechten(textNaam.Text, textWachtwoord.Text);
+            bool inloggen = false;
+            bool rechten = false;
+            try
+            {
+                inloggen = Login.Inloggen(textNaam.Text, textWachtwoord.Text);
+                rechten = Login.Rechten(textNaam.Text, textWachtwoord.Text);
+            }
+            catch (Exception c)
+            {
+                Error.ErrorWegschrijven(c.ToString());
+                MessageBox.Show("Er is iets misgegaan, probeer het opnieuw!");
+            }
             if (inloggen)
             {
-                Form1 form = new Form1(rechten);
+                HoofdForm form = new HoofdForm(rechten);
 
                 this.Hide();
                 form.Show();

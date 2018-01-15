@@ -1,6 +1,6 @@
 ﻿namespace Hoofdform
 {
-    partial class Form1 : MaterialSkin.Controls.MaterialForm
+    partial class HoofdForm : MaterialSkin.Controls.MaterialForm
     {
         
         /// <summary>
@@ -30,7 +30,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HoofdForm));
             this.pictureLoco = new System.Windows.Forms.PictureBox();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
@@ -89,6 +89,8 @@
             this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
             this.arduinoPoort = new System.IO.Ports.SerialPort(this.components);
             this.buttonUitloggen = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.textLengte = new MaterialSkin.Controls.MaterialSingleLineTextField();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLoco)).BeginInit();
             this.materialTabControl1.SuspendLayout();
             this.treinSamenstel.SuspendLayout();
@@ -142,6 +144,8 @@
             // treinSamenstel
             // 
             this.treinSamenstel.BackColor = System.Drawing.Color.White;
+            this.treinSamenstel.Controls.Add(this.textLengte);
+            this.treinSamenstel.Controls.Add(this.materialLabel4);
             this.treinSamenstel.Controls.Add(this.pictureCoupeHoofd);
             this.treinSamenstel.Controls.Add(this.btnAddCoupeTrein);
             this.treinSamenstel.Controls.Add(this.labelTotaalCoupes);
@@ -178,7 +182,7 @@
             // 
             this.btnAddCoupeTrein.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btnAddCoupeTrein.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCoupeTrein.Image")));
-            this.btnAddCoupeTrein.Location = new System.Drawing.Point(234, 232);
+            this.btnAddCoupeTrein.Location = new System.Drawing.Point(234, 270);
             this.btnAddCoupeTrein.Name = "btnAddCoupeTrein";
             this.btnAddCoupeTrein.Size = new System.Drawing.Size(23, 21);
             this.btnAddCoupeTrein.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -193,7 +197,7 @@
             this.labelTotaalCoupes.Depth = 0;
             this.labelTotaalCoupes.Font = new System.Drawing.Font("Roboto", 11F);
             this.labelTotaalCoupes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelTotaalCoupes.Location = new System.Drawing.Point(347, 301);
+            this.labelTotaalCoupes.Location = new System.Drawing.Point(347, 282);
             this.labelTotaalCoupes.MouseState = MaterialSkin.MouseState.HOVER;
             this.labelTotaalCoupes.Name = "labelTotaalCoupes";
             this.labelTotaalCoupes.Size = new System.Drawing.Size(157, 19);
@@ -216,12 +220,12 @@
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.BackColor = System.Drawing.Color.White;
             this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(19, 272);
+            this.materialLabel3.Location = new System.Drawing.Point(19, 265);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(56, 19);
+            this.materialLabel3.Size = new System.Drawing.Size(52, 18);
             this.materialLabel3.TabIndex = 45;
             this.materialLabel3.Text = "Aantal:";
             // 
@@ -232,7 +236,7 @@
             this.labelHandiCoupe.Depth = 0;
             this.labelHandiCoupe.Font = new System.Drawing.Font("Roboto", 11F);
             this.labelHandiCoupe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelHandiCoupe.Location = new System.Drawing.Point(347, 262);
+            this.labelHandiCoupe.Location = new System.Drawing.Point(347, 243);
             this.labelHandiCoupe.MouseState = MaterialSkin.MouseState.HOVER;
             this.labelHandiCoupe.Name = "labelHandiCoupe";
             this.labelHandiCoupe.Size = new System.Drawing.Size(172, 19);
@@ -244,7 +248,7 @@
             this.textAantal.BackColor = System.Drawing.Color.White;
             this.textAantal.Depth = 0;
             this.textAantal.Hint = "";
-            this.textAantal.Location = new System.Drawing.Point(107, 272);
+            this.textAantal.Location = new System.Drawing.Point(107, 269);
             this.textAantal.MaxLength = 32767;
             this.textAantal.MouseState = MaterialSkin.MouseState.HOVER;
             this.textAantal.Name = "textAantal";
@@ -281,7 +285,7 @@
             this.labelTweedeklasse.Depth = 0;
             this.labelTweedeklasse.Font = new System.Drawing.Font("Roboto", 11F);
             this.labelTweedeklasse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelTweedeklasse.Location = new System.Drawing.Point(347, 223);
+            this.labelTweedeklasse.Location = new System.Drawing.Point(347, 204);
             this.labelTweedeklasse.MouseState = MaterialSkin.MouseState.HOVER;
             this.labelTweedeklasse.Name = "labelTweedeklasse";
             this.labelTweedeklasse.Size = new System.Drawing.Size(156, 19);
@@ -291,7 +295,7 @@
             // cmbCabine
             // 
             this.cmbCabine.FormattingEnabled = true;
-            this.cmbCabine.Location = new System.Drawing.Point(107, 192);
+            this.cmbCabine.Location = new System.Drawing.Point(107, 168);
             this.cmbCabine.Name = "cmbCabine";
             this.cmbCabine.Size = new System.Drawing.Size(121, 21);
             this.cmbCabine.TabIndex = 42;
@@ -304,7 +308,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(19, 234);
+            this.materialLabel2.Location = new System.Drawing.Point(19, 201);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(56, 19);
@@ -318,7 +322,7 @@
             this.labelEersteklasse.Depth = 0;
             this.labelEersteklasse.Font = new System.Drawing.Font("Roboto", 11F);
             this.labelEersteklasse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelEersteklasse.Location = new System.Drawing.Point(347, 184);
+            this.labelEersteklasse.Location = new System.Drawing.Point(347, 165);
             this.labelEersteklasse.MouseState = MaterialSkin.MouseState.HOVER;
             this.labelEersteklasse.Name = "labelEersteklasse";
             this.labelEersteklasse.Size = new System.Drawing.Size(150, 19);
@@ -332,7 +336,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(19, 192);
+            this.materialLabel1.Location = new System.Drawing.Point(19, 169);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(91, 19);
@@ -342,7 +346,7 @@
             // cmbCoupe
             // 
             this.cmbCoupe.FormattingEnabled = true;
-            this.cmbCoupe.Location = new System.Drawing.Point(107, 232);
+            this.cmbCoupe.Location = new System.Drawing.Point(107, 201);
             this.cmbCoupe.Name = "cmbCoupe";
             this.cmbCoupe.Size = new System.Drawing.Size(121, 21);
             this.cmbCoupe.TabIndex = 43;
@@ -911,6 +915,36 @@
             this.buttonUitloggen.UseVisualStyleBackColor = true;
             this.buttonUitloggen.Click += new System.EventHandler(this.buttonUitloggen_Click);
             // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel4.Location = new System.Drawing.Point(19, 233);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(58, 19);
+            this.materialLabel4.TabIndex = 54;
+            this.materialLabel4.Text = "Lengte:";
+            // 
+            // textLengte
+            // 
+            this.textLengte.Depth = 0;
+            this.textLengte.Hint = "";
+            this.textLengte.Location = new System.Drawing.Point(107, 234);
+            this.textLengte.MaxLength = 32767;
+            this.textLengte.MouseState = MaterialSkin.MouseState.HOVER;
+            this.textLengte.Name = "textLengte";
+            this.textLengte.PasswordChar = '\0';
+            this.textLengte.SelectedText = "";
+            this.textLengte.SelectionLength = 0;
+            this.textLengte.SelectionStart = 0;
+            this.textLengte.Size = new System.Drawing.Size(121, 23);
+            this.textLengte.TabIndex = 55;
+            this.textLengte.TabStop = false;
+            this.textLengte.UseSystemPasswordChar = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1010,6 +1044,8 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel17;
         private MaterialSkin.Controls.MaterialLabel materialLabel16;
         private MaterialSkin.Controls.MaterialRaisedButton buttonUitloggen;
+        private MaterialSkin.Controls.MaterialSingleLineTextField textLengte;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
     }
 }
 

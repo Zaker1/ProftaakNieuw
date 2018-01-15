@@ -15,7 +15,7 @@ namespace Hoofdform
             FileStream fs = new FileStream(pathText, FileMode.Append);
             StreamWriter sw = new StreamWriter(fs);
 
-            sw.WriteLine(error + "//" + DateTime.Now);
+            sw.WriteLine(DateTime.Now + "//" + error);
 
             sw.Close();
             fs.Close();

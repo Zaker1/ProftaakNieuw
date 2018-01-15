@@ -74,11 +74,11 @@
     <Compile Include="Locomotief.cs" />
     <Compile Include="Coupe.cs" />
     <Compile Include="DatabaseCONN.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="HoofdForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="HoofdForm.Designer.cs">
+      <DependentUpon>HoofdForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ImageConverter.cs" />
     <Compile Include="Login.cs" />
@@ -91,8 +91,8 @@
       <DependentUpon>SimuleerSchermcs.cs</DependentUpon>
     </Compile>
     <Compile Include="Trein.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="HoofdForm.resx">
+      <DependentUpon>HoofdForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InlogForm.resx">
       <DependentUpon>InlogForm.cs</DependentUpon>

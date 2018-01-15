@@ -28,10 +28,9 @@ namespace Hoofdform
         MaterialRaisedButton button;
         int xPositieButton;
         int yPositieButton;
-        
+
         int controlCounter;
 
-        string opsturenEerste;
         string opsturenTweede;
 
         public SimuleerSchermcs(List<Coupe> listCoupe, Locomotief loco)
@@ -69,16 +68,16 @@ namespace Hoofdform
             button = new MaterialRaisedButton
             {
                 Location = new Point(xPositieButton, yPositieButton),
-                Text = ("Simuleer")               
+                Text = ("Simuleer")
             };
 
             button.Click += new EventHandler(button_Click);
-            this.Controls.Add(button);          
+            this.Controls.Add(button);
         }
 
         private void ControlsAanmaken()
         {
-            foreach(Coupe coup in coupeList)
+            foreach (Coupe coup in coupeList)
             {
                 MaterialLabel label = new MaterialLabel
                 {
@@ -93,7 +92,7 @@ namespace Hoofdform
                 };
 
                 this.Controls.Add(label);
-                this.Controls.Add(numeric);               
+                this.Controls.Add(numeric);
 
                 controlCounter++;
                 yPositieButton += 34;
@@ -104,32 +103,15 @@ namespace Hoofdform
             }
         }
 
-        private void String1Aanmaken()
-        {
-            Coupe coupe = coupeList.First();
-            string speciaal;
-            string klasseR = coupe.Klasse_Rechts;
-            string klasseL = coupe.Klasse_Links;
-            string stoelenInCoupe = coupe.Aantal_stoelen.ToString();
 
-            if (coupe.Speciaal)
-            {
-                speciaal = "1";
-            }
-            else
-            {
-                speciaal = "0";
-            }
-            opsturenEerste = String.Format("{0},{1},{2},{3}", speciaal, klasseR, klasseL, stoelenInCoupe);
-        }
 
         private void String2Aanmaken()
-        {         
+        {
             foreach (NumericUpDown down in this.Controls.OfType<NumericUpDown>())
             {
                 int getal = (int)down.Value;
                 string tijdelijkDeel = getal.ToString();
-                
+
 
                 if (tijdelijkDeel.Length == 1)
                 {
@@ -144,23 +126,22 @@ namespace Hoofdform
                 else
                 {
                     opsturenTweede = opsturenTweede + tijdelijkDeel + ",";
-                }              
+                }
             }
         }
 
         private void button_Click(object sender, EventArgs e)
         {
-            String1Aanmaken();
+
             String2Aanmaken();
-            
-            
+
+
             SerialPort arduinoPort = new SerialPort();
 
             arduinoPort.BaudRate = 9600;
             arduinoPort.PortName = "COM4";
 
             arduinoPort.Open();
-            arduinoPort.WriteLine("#" + opsturenEerste + "%");            
             arduinoPort.WriteLine("#" + opsturenTweede.TrimEnd(',') + "&");
             arduinoPort.Close();
         }

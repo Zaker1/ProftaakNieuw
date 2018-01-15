@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -10,7 +11,7 @@ using MaterialSkin.Controls;
 
 namespace Hoofdform
 {
-    public partial class Form1 : MaterialForm
+    public partial class HoofdForm : MaterialForm
     {
         DataTable dt = new DataTable();
         int counterTotaalCoupe;
@@ -18,8 +19,9 @@ namespace Hoofdform
         int counterTweede;
         int counterSpeciaal;
         List<Coupe> coupeLijst = new List<Coupe>();
+        string opsturenEerste;
 
-        public Form1(bool rechten)
+        public HoofdForm(bool rechten)
         {
             InitializeComponent();
             if (rechten == false)
@@ -73,6 +75,24 @@ namespace Hoofdform
 
         }
 
+        private void String1Aanmaken()
+        {
+            Coupe coupe = coupeLijst.First();
+            string speciaal;
+            string klasseR = coupe.Klasse_Rechts;
+            string klasseL = coupe.Klasse_Links;
+            string stoelenInCoupe = coupe.Aantal_stoelen.ToString();
+
+            if (coupe.Speciaal)
+            {
+                speciaal = "1";
+            }
+            else
+            {
+                speciaal = "0";
+            }
+            opsturenEerste = String.Format("{0},{1},{2},{3}", speciaal, klasseR, klasseL, Convert.ToInt32(textLengte.Text));
+        }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
@@ -85,8 +105,18 @@ namespace Hoofdform
                 try
                 {
                     SimuleerSchermcs simuleer = new SimuleerSchermcs(coupeLijst, (Locomotief)cmbCabine.SelectedItem);
-
                     simuleer.Show();
+                    
+
+                    String1Aanmaken();
+                    
+                    
+                    arduinoPoort.BaudRate = 9600;
+                    arduinoPoort.PortName = "COM4";
+
+                    arduinoPoort.Open();
+                    arduinoPoort.WriteLine("#" + opsturenEerste + "%");
+                    arduinoPoort.Close(); 
                 }
                 catch (Exception c)
                 {
