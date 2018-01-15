@@ -30,6 +30,7 @@ namespace Hoofdform
         int yPositieButton;
 
         int controlCounter;
+        int berichtCounter;
 
         SerialPort arduinoPoort = new SerialPort();
         string strEerstecoupe;
@@ -96,12 +97,21 @@ namespace Hoofdform
                     Text = String.Format("Coupe {0}:", controlCounter)
                 };
 
+                MaterialLabel labelKleur = new MaterialLabel
+                {
+                    Location = new Point(xPositieNumeric + 40, yPositieLabels),
+                    Text = String.Format("Kleur {0}:", controlCounter),
+                    Tag = controlCounter
+                };
+
                 NumericUpDown numeric = new NumericUpDown
                 {
                     Location = new Point(xPositieNumeric, yPositieNumeric),
                     Maximum = coup.Aantal_stoelen
                 };
 
+
+                this.Controls.Add(labelKleur);
                 this.Controls.Add(label);
                 this.Controls.Add(numeric);
 
@@ -111,6 +121,7 @@ namespace Hoofdform
                 yPositieNumeric += 34;
 
                 this.Height = yPositieButton + 50;
+                this.Width = xPositieNumeric + 200;
             }
         }
 
@@ -143,7 +154,7 @@ namespace Hoofdform
 
         private void button_Click(object sender, EventArgs e)
         {
-
+            messageTimer.Enabled = true;
             String2Aanmaken();
 
             arduinoPoort.PortName = "COM4";
@@ -168,9 +179,54 @@ namespace Hoofdform
             opsturenTweede = "";
         }
 
+        public void getMessage()
+        {
+            string bericht =  arduinoPoort.ReadLine();
+            
+            if(bericht == "GEMIDDELD")
+            {
+                berichtCounter++;
+            }
+            if(bericht == "VOL")
+            {
+                berichtCounter++;
+            }
+            if(bericht == "LEEG")
+            {
+                berichtCounter++;
+            }
+            foreach(MaterialLabel kleurlabel in this.Controls.OfType<MaterialLabel>())
+            {
+                if (Convert.ToInt32(kleurlabel.Tag) == berichtCounter)
+                {
+                    kleurlabel.Text = bericht;
+
+                    switch (bericht)
+                    {
+                        case "VOL":
+                            kleurlabel.ForeColor = Color.Red;
+                            break;
+                        case "GEMIDDELD":
+                            kleurlabel.ForeColor = Color.Orange;
+                            break;
+                        case "LEEG":
+                            kleurlabel.ForeColor = Color.Green;
+                            break;
+                    }
+                }
+            }
+        
+            
+        }
+
         private static decimal Map(decimal value, decimal fromSource, decimal toSource, decimal fromTarget, decimal toTarget)
         {
             return (value - fromSource) / (toSource - fromSource) * (toTarget - fromTarget) + fromTarget;
+        }
+
+        private void messageTimer_Tick(object sender, EventArgs e)
+        {
+            getMessage();
         }
     }
 }
