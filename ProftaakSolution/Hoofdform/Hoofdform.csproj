@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Communication.cs" />
     <Compile Include="Error.cs" />
     <Compile Include="InlogForm.cs">
       <SubType>Form</SubType>
@@ -82,8 +83,10 @@
     </Compile>
     <Compile Include="ImageConverter.cs" />
     <Compile Include="Login.cs" />
+    <Compile Include="MessageBuilder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SerialMessenger.cs" />
     <Compile Include="SimuleerSchermcs.cs">
       <SubType>Form</SubType>
     </Compile>

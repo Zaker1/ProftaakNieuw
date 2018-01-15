@@ -18,6 +18,7 @@ namespace Hoofdform
     {
         List<Coupe> coupeList;
         Locomotief locomotief;
+        MessageBuilder messageBuilder = new MessageBuilder('#', '%');
 
         int xPositieLabels;
         int yPositieLabels;
@@ -226,10 +227,31 @@ namespace Hoofdform
                         }
                     }
                 }
-            }
-        
-            
+            }          
         }
+
+        public string[] ReadMessages()
+        {
+            if (arduinoPoort.IsOpen
+                && arduinoPoort.BytesToRead > 0)
+            {
+                string data = arduinoPoort.ReadExisting();
+                messageBuilder.Add(data);
+
+                int messageCount = messageBuilder.MessageCount;
+                if (messageCount > 0)
+                {
+                    string[] messages = new string[messageCount];
+                    for (int i = 0; i < messageCount; i++)
+                    {
+                        messages[i] = messageBuilder.GetNextMessage();
+                    }
+                    return messages;
+                }
+            }
+            return null;
+        }
+
 
         private static decimal Map(decimal value, decimal fromSource, decimal toSource, decimal fromTarget, decimal toTarget)
         {
@@ -238,7 +260,48 @@ namespace Hoofdform
 
         private void messageTimer_Tick(object sender, EventArgs e)
         {
-            getMessage();
+            string[] berichten = ReadMessages();
+            if (berichten != null)
+            {
+                foreach (string bericht in berichten)
+                {
+                    //als het goed is is bericht nu “$vol@” of “$leeg@” etc
+                    //zet hier dan ook dat je countdinges++ moet etc. 
+                    //gewoon de code die je al had
+                    if (bericht == "GEMIDDELD")
+                    {
+                        berichtCounter++;
+                    }
+                    if (bericht == "VOL")
+                    {
+                        berichtCounter++;
+                    }
+                    if (bericht == "LEEG")
+                    {
+                        berichtCounter++;
+                    }
+                    foreach (MaterialLabel kleurlabel in this.Controls.OfType<MaterialLabel>())
+                    {
+                        if (Convert.ToInt32(kleurlabel.Tag) == berichtCounter)
+                        {
+                            kleurlabel.Text = bericht;
+
+                            switch (bericht)
+                            {
+                                case "VOL":
+                                    kleurlabel.ForeColor = Color.Red;
+                                    break;
+                                case "GEMIDDELD":
+                                    kleurlabel.ForeColor = Color.Orange;
+                                    break;
+                                case "LEEG":
+                                    kleurlabel.ForeColor = Color.Green;
+                                    break;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
