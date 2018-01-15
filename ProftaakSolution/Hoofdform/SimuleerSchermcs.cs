@@ -77,6 +77,10 @@ namespace Hoofdform
             this.Controls.Add(button);
         }
 
+        public SimuleerSchermcs()
+        {
+        }
+
         private void ControlsAanmaken()
         {
             foreach (Coupe coup in coupeList)
@@ -111,7 +115,8 @@ namespace Hoofdform
         {
             foreach (NumericUpDown down in this.Controls.OfType<NumericUpDown>())
             {
-                int getal = (int)down.Value;
+                decimal tijdelijkGetal = down.Value;
+                decimal getal = Map(tijdelijkGetal, 0, down.Maximum, 0, 255);
                 string tijdelijkDeel = getal.ToString();
 
 
@@ -143,5 +148,10 @@ namespace Hoofdform
 
             opsturenTweede = "";
         }
+
+        private static decimal Map(decimal value, decimal fromSource, decimal toSource, decimal fromTarget, decimal toTarget)
+        {
+            return (value - fromSource) / (toSource - fromSource) * (toTarget - fromTarget) + fromTarget;
+        } 
     }
 }

@@ -114,17 +114,17 @@ namespace Hoofdform
                     SimuleerSchermcs simuleer = new SimuleerSchermcs(coupeLijst, (Locomotief)cmbCabine.SelectedItem, arduinoPoort);
                     simuleer.Show();
                     
-
                     String1Aanmaken();
 
                     arduinoPoort.Open();
                     arduinoPoort.WriteLine("#" + opsturenEerste + "%");
-                    arduinoPoort.Close(); 
+                    arduinoPoort.Close();
+                    
+
                 }
                 catch (Exception c)
                 {
                     Error.ErrorWegschrijven(c.ToString());
-                    MessageBox.Show("Selecteer een locomotief/coupe");
                 } 
             }
         }

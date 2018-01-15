@@ -44,7 +44,6 @@ namespace Hoofdform
             catch (Exception c)
             {
                 Error.ErrorWegschrijven(c.ToString());
-                MessageBox.Show("Er is iets misgegaan, probeer het opnieuw!");
             }
             if (inloggen)
             {
