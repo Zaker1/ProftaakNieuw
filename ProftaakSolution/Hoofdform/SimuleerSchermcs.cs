@@ -31,9 +31,10 @@ namespace Hoofdform
 
         int controlCounter;
 
+        SerialPort arduino;
         string opsturenTweede;
 
-        public SimuleerSchermcs(List<Coupe> listCoupe, Locomotief loco)
+        public SimuleerSchermcs(List<Coupe> listCoupe, Locomotief loco, SerialPort arduinoPoort)
         {
             InitializeComponent();
 
@@ -51,6 +52,7 @@ namespace Hoofdform
 
             coupeList = listCoupe;
             locomotief = loco;
+            arduino = arduinoPoort;
 
             xPositieLabels = 12;
             yPositieLabels = 107;
@@ -135,15 +137,11 @@ namespace Hoofdform
 
             String2Aanmaken();
 
+            arduino.Open();
+            arduino.WriteLine("#" + opsturenTweede.TrimEnd(',') + "&");
+            arduino.Close();
 
-            SerialPort arduinoPort = new SerialPort();
-
-            arduinoPort.BaudRate = 9600;
-            arduinoPort.PortName = "COM4";
-
-            arduinoPort.Open();
-            arduinoPort.WriteLine("#" + opsturenTweede.TrimEnd(',') + "&");
-            arduinoPort.Close();
+            opsturenTweede = "";
         }
     }
 }

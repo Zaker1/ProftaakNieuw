@@ -29,12 +29,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HoofdForm));
             this.pictureLoco = new System.Windows.Forms.PictureBox();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.treinSamenstel = new System.Windows.Forms.TabPage();
+            this.textLengte = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.pictureCoupeHoofd = new System.Windows.Forms.PictureBox();
             this.btnAddCoupeTrein = new System.Windows.Forms.PictureBox();
             this.labelTotaalCoupes = new MaterialSkin.Controls.MaterialLabel();
@@ -87,10 +88,7 @@
             this.radioPassagierJa = new System.Windows.Forms.RadioButton();
             this.materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
-            this.arduinoPoort = new System.IO.Ports.SerialPort(this.components);
             this.buttonUitloggen = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.textLengte = new MaterialSkin.Controls.MaterialSingleLineTextField();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLoco)).BeginInit();
             this.materialTabControl1.SuspendLayout();
             this.treinSamenstel.SuspendLayout();
@@ -167,6 +165,36 @@
             this.treinSamenstel.TabIndex = 0;
             this.treinSamenstel.Text = "Trein samenstellen";
             // 
+            // textLengte
+            // 
+            this.textLengte.Depth = 0;
+            this.textLengte.Hint = "";
+            this.textLengte.Location = new System.Drawing.Point(107, 234);
+            this.textLengte.MaxLength = 32767;
+            this.textLengte.MouseState = MaterialSkin.MouseState.HOVER;
+            this.textLengte.Name = "textLengte";
+            this.textLengte.PasswordChar = '\0';
+            this.textLengte.SelectedText = "";
+            this.textLengte.SelectionLength = 0;
+            this.textLengte.SelectionStart = 0;
+            this.textLengte.Size = new System.Drawing.Size(121, 23);
+            this.textLengte.TabIndex = 55;
+            this.textLengte.TabStop = false;
+            this.textLengte.UseSystemPasswordChar = false;
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel4.Location = new System.Drawing.Point(19, 233);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(58, 19);
+            this.materialLabel4.TabIndex = 54;
+            this.materialLabel4.Text = "Lengte:";
+            // 
             // pictureCoupeHoofd
             // 
             this.pictureCoupeHoofd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -220,12 +248,12 @@
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.BackColor = System.Drawing.Color.White;
             this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel3.Location = new System.Drawing.Point(19, 265);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(52, 18);
+            this.materialLabel3.Size = new System.Drawing.Size(56, 19);
             this.materialLabel3.TabIndex = 45;
             this.materialLabel3.Text = "Aantal:";
             // 
@@ -915,37 +943,7 @@
             this.buttonUitloggen.UseVisualStyleBackColor = true;
             this.buttonUitloggen.Click += new System.EventHandler(this.buttonUitloggen_Click);
             // 
-            // materialLabel4
-            // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(19, 233);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(58, 19);
-            this.materialLabel4.TabIndex = 54;
-            this.materialLabel4.Text = "Lengte:";
-            // 
-            // textLengte
-            // 
-            this.textLengte.Depth = 0;
-            this.textLengte.Hint = "";
-            this.textLengte.Location = new System.Drawing.Point(107, 234);
-            this.textLengte.MaxLength = 32767;
-            this.textLengte.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textLengte.Name = "textLengte";
-            this.textLengte.PasswordChar = '\0';
-            this.textLengte.SelectedText = "";
-            this.textLengte.SelectionLength = 0;
-            this.textLengte.SelectionStart = 0;
-            this.textLengte.Size = new System.Drawing.Size(121, 23);
-            this.textLengte.TabIndex = 55;
-            this.textLengte.TabStop = false;
-            this.textLengte.UseSystemPasswordChar = false;
-            // 
-            // Form1
+            // HoofdForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -953,7 +951,7 @@
             this.Controls.Add(this.buttonUitloggen);
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.materialTabControl1);
-            this.Name = "Form1";
+            this.Name = "HoofdForm";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureLoco)).EndInit();
             this.materialTabControl1.ResumeLayout(false);
@@ -988,7 +986,6 @@
         #endregion
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private System.Windows.Forms.PictureBox pictureLoco;
-        public System.IO.Ports.SerialPort arduinoPoort;
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
         private System.Windows.Forms.TabPage treinSamenstel;
         private System.Windows.Forms.PictureBox pictureCoupeHoofd;

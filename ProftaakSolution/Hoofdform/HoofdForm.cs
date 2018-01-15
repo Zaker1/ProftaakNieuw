@@ -6,6 +6,7 @@ using System.Linq;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using System.IO.Ports;
 
 
 
@@ -21,9 +22,15 @@ namespace Hoofdform
         List<Coupe> coupeLijst = new List<Coupe>();
         string opsturenEerste;
 
+        SerialPort arduinoPoort = new SerialPort();
+
         public HoofdForm(bool rechten)
         {
             InitializeComponent();
+
+            arduinoPoort.BaudRate = 9600;
+            arduinoPoort.PortName = "COM4";
+
             if (rechten == false)
             {
                 materialTabControl1.TabPages.Remove(coupeToevoeg);
@@ -104,15 +111,11 @@ namespace Hoofdform
             {
                 try
                 {
-                    SimuleerSchermcs simuleer = new SimuleerSchermcs(coupeLijst, (Locomotief)cmbCabine.SelectedItem);
+                    SimuleerSchermcs simuleer = new SimuleerSchermcs(coupeLijst, (Locomotief)cmbCabine.SelectedItem, arduinoPoort);
                     simuleer.Show();
                     
 
                     String1Aanmaken();
-                    
-                    
-                    arduinoPoort.BaudRate = 9600;
-                    arduinoPoort.PortName = "COM4";
 
                     arduinoPoort.Open();
                     arduinoPoort.WriteLine("#" + opsturenEerste + "%");
