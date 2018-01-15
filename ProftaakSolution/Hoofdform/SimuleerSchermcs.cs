@@ -31,12 +31,18 @@ namespace Hoofdform
 
         int controlCounter;
 
-        SerialPort arduino;
+        SerialPort arduinoPoort = new SerialPort();
+        string strEerstecoupe;
+
         string opsturenTweede;
 
-        public SimuleerSchermcs(List<Coupe> listCoupe, Locomotief loco, SerialPort arduinoPoort)
+        bool blEerstecoupe = true;
+
+        public SimuleerSchermcs(List<Coupe> listCoupe, Locomotief loco, String strEerstecoupe)
         {
             InitializeComponent();
+
+            this.strEerstecoupe = strEerstecoupe;
 
             // Create a material theme manager and add the form to manage (this)
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
@@ -52,7 +58,6 @@ namespace Hoofdform
 
             coupeList = listCoupe;
             locomotief = loco;
-            arduino = arduinoPoort;
 
             xPositieLabels = 12;
             yPositieLabels = 107;
@@ -115,8 +120,7 @@ namespace Hoofdform
         {
             foreach (NumericUpDown down in this.Controls.OfType<NumericUpDown>())
             {
-                decimal tijdelijkGetal = down.Value;
-                decimal getal = Map(tijdelijkGetal, 0, down.Maximum, 0, 255);
+                int getal = (int)Map(down.Value, 0, down.Maximum, 0, 255);
                 string tijdelijkDeel = getal.ToString();
 
 
@@ -142,9 +146,24 @@ namespace Hoofdform
 
             String2Aanmaken();
 
-            arduino.Open();
-            arduino.WriteLine("#" + opsturenTweede.TrimEnd(',') + "&");
-            arduino.Close();
+            arduinoPoort.PortName = "COM4";
+            arduinoPoort.BaudRate = 9600;
+            arduinoPoort.Open();
+
+            
+
+            if (blEerstecoupe)
+            {
+                blEerstecoupe = false;
+                arduinoPoort.WriteLine("#" + strEerstecoupe + "%");
+            }
+
+            //System.Threading.Thread.Sleep(300);
+
+            arduinoPoort.WriteLine("#" + opsturenTweede.TrimEnd(',') + "&");
+
+            System.Threading.Thread.Sleep(300);
+            arduinoPoort.Close();
 
             opsturenTweede = "";
         }
@@ -152,6 +171,6 @@ namespace Hoofdform
         private static decimal Map(decimal value, decimal fromSource, decimal toSource, decimal fromTarget, decimal toTarget)
         {
             return (value - fromSource) / (toSource - fromSource) * (toTarget - fromTarget) + fromTarget;
-        } 
+        }
     }
 }
