@@ -35,10 +35,10 @@ namespace Hoofdform
         private void buttonInloggen_Click(object sender, EventArgs e)
         {
             bool inloggen = Login.Inloggen(textNaam.Text, textWachtwoord.Text);
-
+            bool rechten = Login.Rechten(textNaam.Text, textWachtwoord.Text);
             if (inloggen)
             {
-                Form1 form = new Form1();
+                Form1 form = new Form1(rechten);
 
                 this.Hide();
                 form.Show();

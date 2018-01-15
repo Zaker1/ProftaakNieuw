@@ -43,5 +43,31 @@ namespace Hoofdform
             }
             return gelukt;
         }
+
+        public static bool Rechten(string gebruikersnaam, string wachtwoord)
+        {
+            bool rechten = false;
+            string query = "SELECT rechten FROM dbo.Gebruiker WHERE naam = @naam AND wachtwoord = @ww";
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (SqlCommand cmd = new SqlCommand(query, connection))
+            {
+
+                connection.Open();
+
+                cmd.Parameters.AddWithValue("@naam", gebruikersnaam);
+                cmd.Parameters.AddWithValue("@ww", wachtwoord);
+
+                try
+                {
+                    rechten = (bool)cmd.ExecuteScalar();
+                }
+                catch (ArgumentException e)
+                {
+                    Error.ErrorWegschrijven(e.ToString());
+                }
+            }
+            return rechten;
+        }
     }
 }

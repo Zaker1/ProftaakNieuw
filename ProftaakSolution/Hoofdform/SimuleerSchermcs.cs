@@ -88,7 +88,8 @@ namespace Hoofdform
 
                 NumericUpDown numeric = new NumericUpDown
                 {
-                    Location = new Point(xPositieNumeric, yPositieNumeric)
+                    Location = new Point(xPositieNumeric, yPositieNumeric),
+                    Maximum = coup.Aantal_stoelen
                 };
 
                 this.Controls.Add(label);
@@ -159,7 +160,7 @@ namespace Hoofdform
             arduinoPort.PortName = "COM4";
 
             arduinoPort.Open();
-            arduinoPort.WriteLine("#" + opsturenEerste + "%");
+            arduinoPort.WriteLine("#" + opsturenEerste + "%");            
             arduinoPort.WriteLine("#" + opsturenTweede.TrimEnd(',') + "&");
             arduinoPort.Close();
         }

@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
-using MaterialSkin.Animations;
-using System.Data.SqlClient;
+
 
 
 namespace Hoofdform
@@ -24,9 +19,15 @@ namespace Hoofdform
         int counterSpeciaal;
         List<Coupe> coupeLijst = new List<Coupe>();
 
-        public Form1()
+        public Form1(bool rechten)
         {
             InitializeComponent();
+            if (rechten == false)
+            {
+                materialTabControl1.TabPages.Remove(coupeToevoeg);
+                materialTabControl1.TabPages.Remove(tabPage1);
+            }
+            
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
 
 
@@ -43,7 +44,6 @@ namespace Hoofdform
             );
 
             fillCombos();
-
         }
 
         private void fillCombos()
@@ -76,9 +76,24 @@ namespace Hoofdform
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            SimuleerSchermcs simuleer = new SimuleerSchermcs(coupeLijst, (Locomotief)cmbCabine.SelectedItem);
+            if (coupeLijst.Count == 0)
+            {
+                MessageBox.Show("Je hebt geen coupe's geselecteerd");
+            }
+            else
+            {
+                try
+                {
+                    SimuleerSchermcs simuleer = new SimuleerSchermcs(coupeLijst, (Locomotief)cmbCabine.SelectedItem);
 
-            simuleer.Show();
+                    simuleer.Show();
+                }
+                catch (Exception c)
+                {
+                    Error.ErrorWegschrijven(c.ToString());
+                    MessageBox.Show("Selecteer een locomotief/coupe");
+                } 
+            }
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -148,6 +163,8 @@ namespace Hoofdform
                 coupe.CoupeToevoegen();
                 fillCombos();
                 MessageBox.Show("Coupe is toegevoegd");
+
+
             }
             catch (Exception c)
             {
@@ -219,14 +236,6 @@ namespace Hoofdform
             }
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (e.CloseReason == CloseReason.UserClosing) //if closed by user
-            {
-                Application.Exit();
-            }
-        }
-
         private void btnAddCoupeTrein_Click(object sender, EventArgs e)
         {
             
@@ -291,6 +300,18 @@ namespace Hoofdform
         private void materialRaisedButton3_Click(object sender, EventArgs e)
         {
             locomotiefToevoegen();
+        }
+
+        private void Form1_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+        private void buttonUitloggen_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            InlogForm form = new InlogForm();
+            form.Show();
         }
     }
 }
