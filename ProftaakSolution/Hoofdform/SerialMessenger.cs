@@ -139,8 +139,10 @@ namespace Hoofdform
         /// Reads data from the serialport and extracts the mesages
         /// </summary>
         /// <returns>An array with messages, of null if no (complete) messages were received (yet)</returns>
-        public string[] ReadMessages()
+        public List<string> ReadMessages()
         {
+            List<string> messages = new List<string>();
+
             if (serialPort.IsOpen
                 && serialPort.BytesToRead > 0)
             {
@@ -152,10 +154,9 @@ namespace Hoofdform
                 int messageCount = messageBuilder.MessageCount;
                 if (messageCount > 0)
                 {
-                    string[] messages = new string[messageCount];
                     for (int i = 0; i < messageCount; i++) // not very fail safe programming... 
                     {
-                        messages[i] = messageBuilder.GetNextMessage();
+                        messages.Add(messageBuilder.GetNextMessage());
                     }
                     return messages;
                 }
@@ -167,7 +168,9 @@ namespace Hoofdform
                 //    Debug.WriteLine("Could not read from serial port: " + exception.Message);
                 //}
             }
-            return null;
+
+            messages.Add("");
+            return messages;
         }
     }
 }

@@ -26,6 +26,8 @@ namespace Hoofdform
         {
             InitializeComponent();
 
+            Communication.Connect();
+
             if (rechten == false)
             {
                 materialTabControl1.TabPages.Remove(coupeToevoeg);

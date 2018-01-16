@@ -33,7 +33,6 @@ namespace Hoofdform
         int controlCounter;
         int berichtCounter;
 
-        SerialPort arduinoPoort = new SerialPort();
         string strEerstecoupe;
 
         string opsturenTweede;
@@ -158,100 +157,18 @@ namespace Hoofdform
             messageTimer.Enabled = true;
             String2Aanmaken();
 
-            arduinoPoort.PortName = "COM4";
-            arduinoPoort.BaudRate = 9600;
-            arduinoPoort.Open();
-
-            
-
             if (blEerstecoupe)
             {
                 blEerstecoupe = false;
-                arduinoPoort.WriteLine("#" + strEerstecoupe + "%");
+                Communication.berichtVerzenden("#" + strEerstecoupe + "%");
             }
-
-            //System.Threading.Thread.Sleep(300);
-
-            arduinoPoort.WriteLine("#" + opsturenTweede.TrimEnd(',') + "&");
+            
+            Communication.berichtVerzenden("#" + opsturenTweede.TrimEnd(',') + "&");
 
             System.Threading.Thread.Sleep(300);
-            arduinoPoort.Close();
 
             opsturenTweede = "";
         }
-
-        public void getMessage()
-        {
-            if (!arduinoPoort.IsOpen)
-            {
-                arduinoPoort.Open();
-                System.Threading.Thread.Sleep(300);
-            }
-
-            if (arduinoPoort.BytesToRead > 0)
-            {
-                char bericht1 = (char)arduinoPoort.BytesToRead;
-                string bericht = "";
-
-                arduinoPoort.Close();
-
-                if (bericht == "GEMIDDELD")
-                {
-                    berichtCounter++;
-                }
-                if (bericht == "VOL")
-                {
-                    berichtCounter++;
-                }
-                if (bericht == "LEEG")
-                {
-                    berichtCounter++;
-                }
-                foreach (MaterialLabel kleurlabel in this.Controls.OfType<MaterialLabel>())
-                {
-                    if (Convert.ToInt32(kleurlabel.Tag) == berichtCounter)
-                    {
-                        kleurlabel.Text = bericht;
-
-                        switch (bericht)
-                        {
-                            case "VOL":
-                                kleurlabel.ForeColor = Color.Red;
-                                break;
-                            case "GEMIDDELD":
-                                kleurlabel.ForeColor = Color.Orange;
-                                break;
-                            case "LEEG":
-                                kleurlabel.ForeColor = Color.Green;
-                                break;
-                        }
-                    }
-                }
-            }          
-        }
-
-        public string[] ReadMessages()
-        {
-            if (arduinoPoort.IsOpen
-                && arduinoPoort.BytesToRead > 0)
-            {
-                string data = arduinoPoort.ReadExisting();
-                messageBuilder.Add(data);
-
-                int messageCount = messageBuilder.MessageCount;
-                if (messageCount > 0)
-                {
-                    string[] messages = new string[messageCount];
-                    for (int i = 0; i < messageCount; i++)
-                    {
-                        messages[i] = messageBuilder.GetNextMessage();
-                    }
-                    return messages;
-                }
-            }
-            return null;
-        }
-
 
         private static decimal Map(decimal value, decimal fromSource, decimal toSource, decimal fromTarget, decimal toTarget)
         {
@@ -260,53 +177,39 @@ namespace Hoofdform
 
         private void messageTimer_Tick(object sender, EventArgs e)
         {
-            string[] berichten = Communication.ReadMessage();
-
-            //bericht.StartsWith
+            List<string> berichten = new List<string>();
+            berichten = Communication.ReadMessage();
 
             if (berichten != null)
             {
+                berichtCounter = 0;
                 foreach (string bericht in berichten)
                 {
-                    MessageBox.Show(bericht);
+                    if (bericht == "GEMIDDELD" || bericht == "VOL" || bericht == "LEEG")
+                    {
+                        berichtCounter++;
 
-                    /*
-                    //als het goed is is bericht nu “$vol@” of “$leeg@” etc
-                    //zet hier dan ook dat je countdinges++ moet etc. 
-                    //gewoon de code die je al had
-                    if (bericht == "GEMIDDELD")
-                    {       
-                        //berichtCounter++;
-                    }
-                    if (bericht == "VOL")
-                    {
-                        //berichtCounter++;
-                    }
-                    if (bericht == "LEEG")
-                    {
-                        //berichtCounter++;
-                    }
-                    foreach (MaterialLabel kleurlabel in this.Controls.OfType<MaterialLabel>())
-                    {
-                        if (Convert.ToInt32(kleurlabel.Tag) == berichtCounter)
+                        foreach (MaterialLabel kleurlabel in this.Controls.OfType<MaterialLabel>())
                         {
-                            kleurlabel.Text = bericht;
-
-                            switch (bericht)
+                            if (Convert.ToInt32(kleurlabel.Tag) == berichtCounter)
                             {
-                                case "VOL":
-                                    kleurlabel.ForeColor = Color.Red;
-                                    break;
-                                case "GEMIDDELD":
-                                    kleurlabel.ForeColor = Color.Orange;
-                                    break;
-                                case "LEEG":
-                                    kleurlabel.ForeColor = Color.Green;
-                                    break;
+                                kleurlabel.Text = bericht;
+
+                                switch (bericht)
+                                {
+                                    case "VOL":
+                                        kleurlabel.ForeColor = Color.Red;
+                                        break;
+                                    case "GEMIDDELD":
+                                        kleurlabel.ForeColor = Color.Orange;
+                                        break;
+                                    case "LEEG":
+                                        kleurlabel.ForeColor = Color.Green;
+                                        break;
+                                }
                             }
                         }
                     }
-                    */
                 }
             }
         }

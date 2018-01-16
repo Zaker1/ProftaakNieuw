@@ -14,8 +14,8 @@ namespace Hoofdform
 
         public static void Connect()
         {
-            MessageBuilder messageBuilder = new MessageBuilder('#', '%');
-            serialMessenger = new SerialMessenger("COM1", 9600, messageBuilder);
+            MessageBuilder messageBuilder = new MessageBuilder('$', '@');
+            serialMessenger = new SerialMessenger("COM4", 9600, messageBuilder);
 
             try
             {
@@ -27,20 +27,22 @@ namespace Hoofdform
             }
         }
 
-        public static void berichtVerzenden(string bericht, string parameter)
+        public static void berichtVerzenden(string bericht)
         {
-            serialMessenger.SendMessage(bericht + ":" + parameter);
+            serialMessenger.SendMessage(bericht);
         }
 
-        public static string[] ReadMessage()
+        public static List<string> ReadMessage()
         {
-            string[] berichten = serialMessenger.ReadMessages();
-            if (berichten != null)
+            List<string> berichten = new List<string>();
+            berichten = serialMessenger.ReadMessages();
+            if (berichten[0] != "")
             {
                 return berichten;
             }
 
-            return null;
+            berichten.Add("");
+            return berichten;
         }
 
         private static string GetParameter(string message)
