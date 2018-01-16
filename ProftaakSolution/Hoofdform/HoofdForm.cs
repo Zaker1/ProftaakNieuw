@@ -14,6 +14,7 @@ namespace Hoofdform
 {
     public partial class HoofdForm : MaterialForm
     {
+        string test;
         DataTable dt = new DataTable();
         int counterTotaalCoupe;
         int counterEerste;
