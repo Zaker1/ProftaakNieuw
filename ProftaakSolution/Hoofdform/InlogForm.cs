@@ -30,6 +30,8 @@ namespace Hoofdform
                 Primary.Yellow600, Accent.Blue400,
                 TextShade.BLACK
             );
+
+            Communication.Connect();
         }
 
         private void buttonInloggen_Click(object sender, EventArgs e)

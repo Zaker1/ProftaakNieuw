@@ -93,10 +93,6 @@ namespace Hoofdform
             this.Controls.Add(button);
         }
 
-        public SimuleerSchermcs()
-        {
-        }
-
         private void ControlsAanmaken()
         {
             foreach (Coupe coup in coupeList)
@@ -163,28 +159,12 @@ namespace Hoofdform
 
         private void buttonRandom_Click(object sender, EventArgs e)
         {
-            foreach (NumericUpDown down in this.Controls.OfType<NumericUpDown>())
-            {
-                down.Value = rnd.Next(0, (int)down.Maximum);
-            }
+            RandomWaardes();
         }
 
         private void button_Click(object sender, EventArgs e)
         {
-            messageTimer.Enabled = true;
-            String2Aanmaken();
-
-            if (blEerstecoupe)
-            {
-                blEerstecoupe = false;
-                Communication.berichtVerzenden("#" + strEerstecoupe + "%");
-            }
-            
-            Communication.berichtVerzenden("#" + opsturenTweede.TrimEnd(',') + "&");
-
-            System.Threading.Thread.Sleep(300);
-
-            opsturenTweede = "";
+            String2Versturen();
         }
 
         private static decimal Map(decimal value, decimal fromSource, decimal toSource, decimal fromTarget, decimal toTarget)
@@ -228,6 +208,32 @@ namespace Hoofdform
                         }
                     }
                 }
+            }
+        }
+
+        private void String2Versturen()
+        {
+            messageTimer.Enabled = true;
+            String2Aanmaken();
+
+            if (blEerstecoupe)
+            {
+                blEerstecoupe = false;
+                Communication.berichtVerzenden("#" + strEerstecoupe + "%");
+            }
+
+            Communication.berichtVerzenden("#" + opsturenTweede.TrimEnd(',') + "&");
+
+            System.Threading.Thread.Sleep(300);
+
+            opsturenTweede = "";
+        }
+
+        private void RandomWaardes()
+        {
+            foreach (NumericUpDown down in this.Controls.OfType<NumericUpDown>())
+            {
+                down.Value = rnd.Next(0, (int)down.Maximum);
             }
         }
     }
