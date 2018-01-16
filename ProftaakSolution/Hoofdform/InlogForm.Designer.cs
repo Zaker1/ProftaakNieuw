@@ -107,6 +107,7 @@
             this.textWachtwoord.TabIndex = 5;
             this.textWachtwoord.TabStop = false;
             this.textWachtwoord.UseSystemPasswordChar = false;
+            this.textWachtwoord.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textWachtwoord_KeyDown);
             // 
             // buttonInloggen
             // 

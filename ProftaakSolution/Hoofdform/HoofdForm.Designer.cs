@@ -322,6 +322,7 @@
             // 
             // cmbCabine
             // 
+            this.cmbCabine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCabine.FormattingEnabled = true;
             this.cmbCabine.Location = new System.Drawing.Point(107, 168);
             this.cmbCabine.Name = "cmbCabine";
@@ -373,6 +374,7 @@
             // 
             // cmbCoupe
             // 
+            this.cmbCoupe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCoupe.FormattingEnabled = true;
             this.cmbCoupe.Location = new System.Drawing.Point(107, 201);
             this.cmbCoupe.Name = "cmbCoupe";
@@ -953,6 +955,7 @@
             this.Controls.Add(this.materialTabControl1);
             this.Name = "HoofdForm";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HoofdForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureLoco)).EndInit();
             this.materialTabControl1.ResumeLayout(false);
             this.treinSamenstel.ResumeLayout(false);

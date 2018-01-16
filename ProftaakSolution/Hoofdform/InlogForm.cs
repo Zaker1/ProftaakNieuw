@@ -34,6 +34,12 @@ namespace Hoofdform
 
         private void buttonInloggen_Click(object sender, EventArgs e)
         {
+            Inloggen();
+            
+        }
+
+        private void Inloggen()
+        {
             bool inloggen = false;
             bool rechten = false;
             try
@@ -56,7 +62,14 @@ namespace Hoofdform
             {
                 MessageBox.Show("Dit account bestaat niet, probeer opnieuw.");
             }
-            
+        }
+
+        private void textWachtwoord_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Inloggen();
+            }
         }
     }
 }

@@ -19,6 +19,7 @@ namespace Hoofdform
         List<Coupe> coupeList;
         Locomotief locomotief;
         MessageBuilder messageBuilder = new MessageBuilder('#', '%');
+        Random rnd = new Random();
 
         int xPositieLabels;
         int yPositieLabels;
@@ -26,6 +27,7 @@ namespace Hoofdform
         int xPositieNumeric;
         int yPositieNumeric;
 
+        MaterialRaisedButton buttonRandom;
         MaterialRaisedButton button;
         int xPositieButton;
         int yPositieButton;
@@ -79,7 +81,15 @@ namespace Hoofdform
                 Text = ("Simuleer")
             };
 
+            buttonRandom = new MaterialRaisedButton
+            {
+                Location = new Point(xPositieButton + 150, yPositieButton),
+                Text = ("Random")
+            };
+
+            buttonRandom.Click += new EventHandler(buttonRandom_Click);
             button.Click += new EventHandler(button_Click);
+            this.Controls.Add(buttonRandom);
             this.Controls.Add(button);
         }
 
@@ -107,9 +117,8 @@ namespace Hoofdform
                 NumericUpDown numeric = new NumericUpDown
                 {
                     Location = new Point(xPositieNumeric, yPositieNumeric),
-                    Maximum = coup.Aantal_stoelen
+                    Maximum = coup.Aantal_stoelen,                
                 };
-
 
                 this.Controls.Add(labelKleur);
                 this.Controls.Add(label);
@@ -149,6 +158,14 @@ namespace Hoofdform
                 {
                     opsturenTweede = opsturenTweede + tijdelijkDeel + ",";
                 }
+            }
+        }
+
+        private void buttonRandom_Click(object sender, EventArgs e)
+        {
+            foreach (NumericUpDown down in this.Controls.OfType<NumericUpDown>())
+            {
+                down.Value = rnd.Next(0, (int)down.Maximum);
             }
         }
 

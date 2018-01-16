@@ -26,7 +26,7 @@ namespace Hoofdform
         {
             InitializeComponent();
 
-            Communication.Connect();
+            
 
             if (rechten == false)
             {
@@ -108,6 +108,7 @@ namespace Hoofdform
             {
                 try
                 {
+                    Communication.Connect();
                     String1Aanmaken();
 
                     SimuleerSchermcs simuleer = new SimuleerSchermcs(coupeLijst, (Locomotief)cmbCabine.SelectedItem, opsturenEerste);
@@ -118,6 +119,9 @@ namespace Hoofdform
                     Error.ErrorWegschrijven(c.ToString());
                 } 
             }
+
+            Resetten();
+            LabelsUpdaten();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -262,63 +266,79 @@ namespace Hoofdform
 
         private void btnAddCoupeTrein_Click(object sender, EventArgs e)
         {
-            
-            for (int i = 0; i < Convert.ToInt32(textAantal.Text); i++)
+            try
             {
-                counterTotaalCoupe++;
-
-                try
+                for (int i = 0; i < Convert.ToInt32(textAantal.Text); i++)
                 {
-                    Coupe coupe = (Coupe)cmbCoupe.SelectedItem;
+                    counterTotaalCoupe++;
 
-                    if (coupe.Klasse_Links == "1")
+                    try
                     {
-                        counterEerste++;
-                    }
-                    else
-                    {
-                        counterTweede++;
-                    }
+                        Coupe coupe = (Coupe)cmbCoupe.SelectedItem;
 
-                    if (coupe.Klasse_Rechts == "1")
-                    {
-                        counterEerste++;
-                    }
-                    else
-                    {
-                        counterTweede++;
-                    }
+                        if (coupe.Klasse_Links == "1")
+                        {
+                            counterEerste++;
+                        }
+                        else
+                        {
+                            counterTweede++;
+                        }
 
-                    if (coupe.Speciaal)
-                    {
-                        counterSpeciaal++;
-                    }
+                        if (coupe.Klasse_Rechts == "1")
+                        {
+                            counterEerste++;
+                        }
+                        else
+                        {
+                            counterTweede++;
+                        }
 
-                    coupeLijst.Add(coupe);
-                }
-                catch (Exception c)
-                {
-                    Error.ErrorWegschrijven(c.ToString());
+                        if (coupe.Speciaal)
+                        {
+                            counterSpeciaal++;
+                        }
+
+                        coupeLijst.Add(coupe);
+                    }
+                    catch (Exception c)
+                    {
+                        Error.ErrorWegschrijven(c.ToString());
+                    }
                 }
             }
-
-            labelTotaalCoupes.Text = String.Format("Totaal aantal coupe's: {0}", counterTotaalCoupe);
-            labelEersteklasse.Text = String.Format("Aantal eerste klasse: {0}", counterEerste);
-            labelTweedeklasse.Text = String.Format("Aantal tweede klasse: {0}", counterTweede);
-            labelHandiCoupe.Text = String.Format("Aantal speciale coupe's: {0}", counterSpeciaal);
-
+            catch (FormatException c)
+            {
+                Error.ErrorWegschrijven(c.ToString());
+                MessageBox.Show("Vul een aantal in!");
+            }
+            LabelsUpdaten();
         }
 
         private void cmbCabine_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Locomotief loco = (Locomotief)cmbCabine.SelectedItem;
-            pictureCabine.Image = loco.Image;
+            try
+            {
+                Locomotief loco = (Locomotief)cmbCabine.SelectedItem;
+                pictureCabine.Image = loco.Image;
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void cmbCoupe_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Coupe coupe = (Coupe)cmbCoupe.SelectedItem;
-            pictureCoupeHoofd.Image = coupe.Image;
+            try
+            {
+                Coupe coupe = (Coupe)cmbCoupe.SelectedItem;
+                pictureCoupeHoofd.Image = coupe.Image;
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void materialRaisedButton3_Click(object sender, EventArgs e)
@@ -336,6 +356,38 @@ namespace Hoofdform
             this.Close();
             InlogForm form = new InlogForm();
             form.Show();
+        }
+
+        private void LabelsUpdaten()
+        {
+            labelTotaalCoupes.Text = String.Format("Totaal aantal coupe's: {0}", counterTotaalCoupe);
+            labelEersteklasse.Text = String.Format("Aantal eerste klasse: {0}", counterEerste);
+            labelTweedeklasse.Text = String.Format("Aantal tweede klasse: {0}", counterTweede);
+            labelHandiCoupe.Text = String.Format("Aantal speciale coupe's: {0}", counterSpeciaal);
+        }
+
+        private void Resetten()
+        {
+            counterEerste = 0;
+            counterSpeciaal = 0;
+            counterTotaalCoupe = 0;
+            counterTweede = 0;
+
+            cmbCabine.SelectedIndex = -1;
+            cmbCoupe.SelectedIndex = -1;
+            pictureCoupeHoofd.Image = null;
+            pictureCabine.Image = null;
+            coupeLijst.Clear();
+            textAantal.Text = String.Empty;
+            textLengte.Text = String.Empty;
+        }
+
+        private void HoofdForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Application.Exit();
+            }
         }
     }
 }
