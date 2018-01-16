@@ -260,25 +260,31 @@ namespace Hoofdform
 
         private void messageTimer_Tick(object sender, EventArgs e)
         {
-            string[] berichten = ReadMessages();
+            string[] berichten = Communication.ReadMessage();
+
+            //bericht.StartsWith
+
             if (berichten != null)
             {
                 foreach (string bericht in berichten)
                 {
+                    MessageBox.Show(bericht);
+
+                    /*
                     //als het goed is is bericht nu “$vol@” of “$leeg@” etc
                     //zet hier dan ook dat je countdinges++ moet etc. 
                     //gewoon de code die je al had
                     if (bericht == "GEMIDDELD")
-                    {
-                        berichtCounter++;
+                    {       
+                        //berichtCounter++;
                     }
                     if (bericht == "VOL")
                     {
-                        berichtCounter++;
+                        //berichtCounter++;
                     }
                     if (bericht == "LEEG")
                     {
-                        berichtCounter++;
+                        //berichtCounter++;
                     }
                     foreach (MaterialLabel kleurlabel in this.Controls.OfType<MaterialLabel>())
                     {
@@ -300,6 +306,7 @@ namespace Hoofdform
                             }
                         }
                     }
+                    */
                 }
             }
         }
